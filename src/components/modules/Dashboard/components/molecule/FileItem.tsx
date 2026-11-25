@@ -1,4 +1,4 @@
-import { Download, FileText } from "lucide-react";
+import {  FileText } from "@/assets/icons/Icons"
 import { useTranslation } from "react-i18next";
 
 import { toneMap, type Tone } from "../../../utils/DashboardData";

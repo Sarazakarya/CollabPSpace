@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Bot, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import DashboardCard from "./DashboardCard";
-import { Button } from "@/components/ui/button";
 
 export default function AskAICard() {
   const { t } = useTranslation();
