@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "spaces": "Spaces",
+    "login": "Login",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "chats": "Chats",
+    "meetings": "Meetings",
+    "reports": "Reports",
+    "menu": "Menu"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signInSubtitle": "Welcome back, you've been missed",
+    "signUp": "Sign up",
+    "signUpTitle": "Create account",
+    "signUpSubtitle": "Start collaborating with your team",
+    "googleSignIn": "Sign in with Google",
+    "googleSignUp": "Sign up with Google",
+    "or": "or",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "createPasswordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "terms": "I agree to the terms and privacy policy",
+    "submit": "Sign in",
+    "signingIn": "Signing in...",
+    "creating": "Creating account...",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "errors": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email",
+      "passwordMin": "Password must be at least 6 characters",
+      "nameMin": "Enter your full name",
+      "confirmRequired": "Confirm your password",
+      "passwordsMismatch": "Passwords do not match",
+      "termsRequired": "You must accept the terms"
+    },
+    "ok": "OK",
+    "loginSuccess": "Logged in successfully!",
+    "loginError": "Something went wrong!"
+  },
+  "welcome": "Welcome, {{name}}",
+  "dashboard": {
+    "search": "Search",
+    "viewAll": "View all",
+    "notifications": "Notifications",
+    "stats": {
+      "pending": "Pending Tasks",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "completionRate": "Completion Rate",
+      "fromLastMonth": "{{value}} from last month"
+    },
+    "overview": {
+      "title": "Project overview",
+      "allProjects": "All Projects",
+      "thisYear": "This Year"
+    },
+    "months": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun"
+    },
+    "activeProjects": {
+      "title": "Active Projects",
+      "tasks": "Task {{done}}/{{total}}"
+    },
+    "recentFiles": {
+      "title": "Recent Files",
+      "by": "By {{name}} • {{time}}",
+      "download": "Download"
+    },
+    "tasks": {
+      "title": "Tasks",
+      "dueToday": "due today",
+      "due": "due {{date}}"
+    },
+    "priority": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "teams": {
+      "title": "Teams",
+      "name": "Name",
+      "tasks": "Tasks",
+      "leader": "Leader",
+      "members": "members",
+      "projects": "projects"
+    },
+    "meetings": {
+      "title": "Upcoming meetings",
+      "today": "Today"
+    },
+    "askAI": {
+      "title": "Ask AI",
+      "empty": "Ask me anything about...",
+      "placeholder": "Ask me anything about...",
+      "send": "Send"
+    },
+    "userMenu": {
+      "open": "Open user menu",
+      "profile": "Profile",
+      "edit": "Edit profile",
+      "logout": "Log out"
+    }
+  },
+  "common": {
+    "ok": "OK"
+  },
+  "emptyState": {
+    "title": "No data found",
+    "message": "There is nothing to display here yet."
+  },
+  "errorState": {
+    "title": "Oops! Something went wrong",
+    "message": "An unexpected error occurred. Please try again.",
+    "retry": "Try Again"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
+    "backToHome": "Back to Home"
+  }
+}

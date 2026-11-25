@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "spaces": "المساحات",
+    "login": "تسجيل الدخول",
+    "dashboard": "لوحة التحكم",
+    "projects": "المشاريع",
+    "tasks": "المهام",
+    "chats": "المحادثات",
+    "meetings": "الاجتماعات",
+    "reports": "التقارير",
+    "menu": "القائمة"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signInSubtitle": "أهلاً بعودتك",
+    "signUp": "إنشاء حساب",
+    "signUpTitle": "إنشاء حساب جديد",
+    "signUpSubtitle": "ابدأ التعاون مع فريقك",
+    "googleSignIn": "الدخول بحساب جوجل",
+    "googleSignUp": "التسجيل بحساب جوجل",
+    "or": "أو",
+    "fullName": "الاسم بالكامل",
+    "fullNamePlaceholder": "أدخل اسمك بالكامل",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "createPasswordPlaceholder": "أنشئ كلمة مرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد كتابة كلمة المرور",
+    "remember": "تذكرني",
+    "forgot": "نسيت كلمة المرور؟",
+    "terms": "أوافق على الشروط وسياسة الخصوصية",
+    "submit": "دخول",
+    "signingIn": "جارٍ تسجيل الدخول...",
+    "creating": "جارٍ إنشاء الحساب...",
+    "noAccount": "ليس لديك حساب؟",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "errors": {
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "أدخل بريدًا إلكترونيًا صحيحًا",
+      "passwordMin": "كلمة المرور يجب ألا تقل عن 6 أحرف",
+      "nameMin": "أدخل اسمك بالكامل",
+      "confirmRequired": "أكد كلمة المرور",
+      "passwordsMismatch": "كلمتا المرور غير متطابقتين",
+      "termsRequired": "يجب الموافقة على الشروط"
+    },
+    "ok": "حسنًا",
+    "loginSuccess": "تم تسجيل الدخول بنجاح!",
+    "loginError": "حدث خطأ ما!"
+  },
+  "welcome": "أهلاً، {{name}}",
+  "dashboard": {
+    "search": "بحث",
+    "viewAll": "عرض الكل",
+    "notifications": "الإشعارات",
+    "stats": {
+      "pending": "مهام معلّقة",
+      "inProgress": "قيد التنفيذ",
+      "completed": "مكتملة",
+      "completionRate": "نسبة الإنجاز",
+      "fromLastMonth": "{{value}} عن الشهر الماضي"
+    },
+    "overview": {
+      "title": "نظرة عامة على المشاريع",
+      "allProjects": "كل المشاريع",
+      "thisYear": "هذه السنة"
+    },
+    "months": {
+      "jan": "يناير",
+      "feb": "فبراير",
+      "mar": "مارس",
+      "apr": "أبريل",
+      "may": "مايو",
+      "jun": "يونيو"
+    },
+    "activeProjects": {
+      "title": "المشاريع النشطة",
+      "tasks": "المهام {{done}}/{{total}}"
+    },
+    "recentFiles": {
+      "title": "أحدث الملفات",
+      "by": "بواسطة {{name}} • {{time}}",
+      "download": "تحميل"
+    },
+    "tasks": {
+      "title": "المهام",
+      "dueToday": "تنتهي اليوم",
+      "due": "تنتهي {{date}}"
+    },
+    "priority": {
+      "high": "عالية",
+      "medium": "متوسطة",
+      "low": "منخفضة"
+    },
+    "teams": {
+      "title": "الفرق",
+      "name": "الاسم",
+      "tasks": "المهام",
+      "leader": "قائد",
+      "members": "أعضاء",
+      "projects": "مشاريع"
+    },
+    "meetings": {
+      "title": "الاجتماعات القادمة",
+      "today": "اليوم"
+    },
+    "askAI": {
+      "title": "اسأل الذكاء الاصطناعي",
+      "empty": "اسألني عن أي شيء...",
+      "placeholder": "اسألني عن أي شيء...",
+      "send": "إرسال"
+    },
+    "userMenu": {
+      "open": "فتح قائمة المستخدم",
+      "profile": "الملف الشخصي",
+      "edit": "تعديل الملف الشخصي",
+      "logout": "تسجيل الخروج"
+    }
+  },
+  "common": {
+    "ok": "حسنًا"
+  },
+  "emptyState": {
+    "title": "لا توجد بيانات",
+    "message": "لا يوجد أي محتوى لعرضه حاليًا."
+  },
+
+  "errorState": {
+    "title": "عذرًا! حدث خطأ",
+    "message": "حدث خطأ غير متوقع. برجاء المحاولة مرة أخرى.",
+    "retry": "إعادة المحاولة"
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "عذرًا، الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.",
+    "backToHome": "العودة للرئيسية"
+  }
+}
