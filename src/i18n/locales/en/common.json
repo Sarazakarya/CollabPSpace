@@ -79,7 +79,7 @@
     },
     "activeProjects": {
       "title": "Active Projects",
-      "tasks": "Task {{done}}/{{total}}"
+      "tasks": "Tasks {{done}}/{{total}}"
     },
     "recentFiles": {
       "title": "Recent Files",
@@ -88,8 +88,8 @@
     },
     "tasks": {
       "title": "Tasks",
-      "dueToday": "due today",
-      "due": "due {{date}}"
+      "dueToday": "Due today",
+      "due": "Due {{date}}"
     },
     "priority": {
       "high": "High",
@@ -101,8 +101,8 @@
       "name": "Name",
       "tasks": "Tasks",
       "leader": "Leader",
-      "members": "members",
-      "projects": "projects"
+      "members": "Members",
+      "projects": "Projects"
     },
     "meetings": {
       "title": "Upcoming meetings",
@@ -110,8 +110,8 @@
     },
     "askAI": {
       "title": "Ask AI",
-      "empty": "Ask me anything about...",
-      "placeholder": "Ask me anything about...",
+      "empty": "Ask me anything...",
+      "placeholder": "Ask me anything...",
       "send": "Send"
     },
     "userMenu": {
@@ -121,8 +121,388 @@
       "logout": "Log out"
     }
   },
+  "chats": {
+    "projectChats": "Project Chats",
+    "projectChat": "Project chat",
+    "search": "Search chats...",
+    "noChats": "No project chats yet",
+    "selectChat": "Select Chat",
+    "back": "Back",
+    "writeMessage": "Write a message",
+    "send": "Send",
+    "attach": "Attach file",
+    "actions": "Message actions",
+    "reply": "Reply",
+    "edit": "Edit",
+    "delete": "Delete",
+    "edited": "edited",
+    "replyingTo": "Replying to {{name}}",
+    "editingMessage": "Editing message",
+    "noMessages": "No messages yet. Say hello!",
+    "loadError": "Couldn't load the messages.",
+    "deleteTitle": "Delete this message?",
+    "deleteDescription": "This action can't be undone.",
+    "alerts": {
+      "sendError": "The message couldn't be sent. Please try again.",
+      "editError": "The message couldn't be updated. Please try again.",
+      "deleteError": "The message couldn't be deleted. Please try again.",
+      "messageDeleted": "Message deleted."
+    }
+  },
+  "meetings": {
+    "add": "Add Meeting",
+    "today": "Today",
+    "time": "Time",
+    "join": "Join",
+    "previousWeek": "Previous week",
+    "nextWeek": "Next week",
+    "modal": {
+      "title": "Add a meeting",
+      "description": "Schedule a meeting and invite your team.",
+      "project": "Project",
+      "selectProject": "Select a project",
+      "name": "Meeting title",
+      "namePlaceholder": "e.g. Design review",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "What will you discuss?",
+      "date": "Date",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "link": "Meeting link",
+      "attendees": "Attendees",
+      "attendeesDescription": "Choose the project members to invite.",
+      "selectProjectFirst": "Select a project to see its members.",
+      "noMembers": "No members found for this project.",
+      "creating": "Scheduling...",
+      "create": "Schedule meeting"
+    },
+    "validation": {
+      "project": "Please select a project",
+      "title": "Title must be at least 3 characters",
+      "titleMax": "Title cannot exceed 120 characters",
+      "descriptionMax": "Description cannot exceed 500 characters",
+      "date": "Please select a date",
+      "startTime": "Please select a start time",
+      "endTime": "Please select an end time",
+      "endBeforeStart": "End time must be after the start time",
+      "link": "Enter a valid link (https://...)"
+    },
+    "tabs": {
+      "aiSummary": "AI Summary",
+      "notes": "Notes"
+    },
+    "summary": {
+      "title": "AI Generated Summary",
+      "keyPoints": "Key Points",
+      "actionItems": "Action Items",
+      "empty": "No summary has been generated for this meeting yet.",
+      "generate": "Generate summary",
+      "generating": "Generating...",
+      "createTasks": "Create tasks",
+      "creatingTasks": "Creating...",
+      "noNotes": "No notes for this meeting."
+    },
+    "video": {
+      "noRecording": "No recording available for this meeting.",
+      "joinMeeting": "Join meeting"
+    },
+    "transcripts": {
+      "title": "Meeting Transcripts",
+      "search": "Search transcript",
+      "empty": "No transcript available.",
+      "noResults": "No results found."
+    },
+    "alerts": {
+      "created": "Meeting scheduled successfully.",
+      "createError": "Failed to schedule the meeting. Please try again.",
+      "summaryGenerated": "Summary generated successfully.",
+      "summaryError": "Failed to generate the summary. Please try again.",
+      "tasksCreated": "Tasks created from the action items.",
+      "tasksError": "Failed to create tasks. Please try again."
+    }
+  },
+  "tasks": {
+    "title": "My Tasks",
+    "subtitle": "Manage and track all your tasks in one place",
+    "createTask": "Create Task",
+    "createTaskDescription": "Add a new task and fill in its details",
+    "creating": "Creating...",
+    "search": "Search tasks...",
+    "filter": "Filter by status",
+    "all": "All Tasks",
+    "Pending": "To-do",
+    "In Progress": "In Progress",
+    "In Review": "In Review",
+    "Completed": "Completed",
+    "taskName": "Task Name",
+    "description": "Description",
+    "priority": "Priority",
+    "status": "Status",
+    "assignee": "Assignee",
+    "assigneeId": "Assignee ID",
+    "dueDate": "Due Date",
+    "addTask": "Add Task",
+    "editTask": "Edit Task",
+    "deleteTask": "Delete Task",
+    "unassigned": "Unassigned",
+    "noTasks": "No tasks found",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "critical": "Critical",
+    "deleteConfirmation": "Are you sure you want to delete \"{{name}}\"? This action can't be undone."
+  },
+
+  "projects": {
+    "title": "Projects",
+    "allTitle": "All Projects",
+    "search": "Search for a project...",
+    "add": "Add Project",
+    "modal": {
+      "title": "Create New Project",
+      "description": "Add project details, set its timeline, and assign teams.",
+      "basicInfo": "Basic Information",
+      "basicInfoDescription": "Enter the project name and description.",
+      "projectName": "Project Name",
+      "namePlaceholder": "e.g. Website Redesign",
+      "projectDescription": "Description",
+      "descriptionPlaceholder": "Describe the project goals and expected outcomes.",
+      "timeline": "Timeline & Planning",
+      "timelineDescription": "Set the project dates and initial status.",
+      "startDate": "Start Date",
+      "deadline": "Deadline",
+      "status": "Project Status",
+      "priority": "Priority",
+      "assignTeams": "Assign Teams",
+      "assignTeamsDescription": "Choose one or more teams for this project.",
+      "members": "{{count}} members",
+      "requiredFields": "Required fields",
+      "creating": "Creating...",
+      "create": "Create Project"
+    },
+    "validation": {
+      "nameMin": "Project name must be at least 3 characters",
+      "nameMax": "Project name cannot exceed 80 characters",
+      "descriptionMin": "Description must be at least 10 characters",
+      "descriptionMax": "Description cannot exceed 500 characters",
+      "startDate": "Please select a start date",
+      "deadline": "Please select a deadline",
+      "teams": "Please select at least one team",
+      "deadlineBeforeStart": "Deadline cannot be earlier than the start date"
+    },
+    "filters": {
+      "all": "All Statuses",
+      "active": "In Progress",
+      "done": "Completed",
+      "onHold": "On Hold",
+      "newest": "Newest",
+      "oldest": "Oldest",
+      "status": "Status",
+      "sort": "Sort by"
+    },
+    "columns": {
+      "name": "Project Name",
+      "startDate": "Start Date",
+      "deadline": "Deadline",
+      "status": "Status",
+      "files": "Files",
+      "team": "Team",
+      "priority": "Priority"
+    },
+    "files": "{{count}} files",
+    "status": {
+      "active": "In Progress",
+      "done": "Completed",
+      "onHold": "On Hold",
+      "In Progress": "In Progress",
+      "Pending": "Pending",
+      "On Hold": "On Hold",
+      "Completed": "Completed"
+    },
+    "priority": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": "High",
+      "Critical": "Critical"
+    },
+    "empty": "No projects found",
+    "loading": "Loading projects...",
+    "error": "Something went wrong. Please try again.",
+    "completedPct": "{{value}}% Completed",
+    "pagination": {
+      "page": "Page {{page}} of {{total}}",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "tasks": "Tasks",
+      "teams": "Teams",
+      "files": "Files"
+    },
+    "dueDate": "Due Date",
+    "startDate": "Start Date",
+    "deadline": "Deadline",
+    "description": "Description",
+    "details": {
+      "title": "Project Details",
+      "type": "Project Type",
+      "startDate": "Start Date",
+      "deadline": "Deadline",
+      "priority": "Priority",
+      "totalTasks": "Total Tasks"
+    },
+    "progress": {
+      "title": "Project Progress",
+      "completed": "Project Completed",
+      "pending": "Pending Tasks",
+      "inProgress": "In Progress Tasks",
+      "done": "Completed Tasks"
+    },
+    "teamMembers": {
+      "title": "Team Members",
+      "leader": "Leader"
+    },
+    "kanban": {
+      "todo": "To-do",
+      "inProgress": "In Progress",
+      "inReview": "In Review",
+      "completed": "Completed Tasks",
+      "addTask": "Add Task",
+      "progress": "Progress",
+      "reviewer": "Reviewer",
+      "noTasks": "No tasks yet"
+    },
+    "alerts": {
+      "createSuccess": "Project created successfully.",
+      "createError": "Failed to create project. Please try again."
+    },
+    "overview": {
+      "daysLeft": "{{value}} day(s) left",
+      "overdue": "Overdue",
+      "daysRemaining": "Days Remaining",
+      "created": "Created",
+      "noDescription": "No description added yet.",
+      "noMembers": "No members added yet.",
+      "roles": {
+        "Owner": "Owner",
+        "Member": "Member",
+        "Leader": "Leader"
+      }
+    },
+    "taskForm": {
+      "title": "Create New Task",
+      "editTitle": "Edit Task",
+      "description": "Add a task to the project and set its details.",
+      "projectId": "Project ID",
+      "name": "Task Name",
+      "namePlaceholder": "Enter task name",
+      "taskDescription": "Description",
+      "descriptionPlaceholder": "Enter task description",
+      "priority": "Priority",
+      "selectPriority": "Select Priority",
+      "status": "Status",
+      "selectStatus": "Select Status",
+      "dueDate": "Due Date",
+      "creating": "Creating task...",
+      "create": "Create Task",
+      "update": "Save Changes"
+    },
+    "taskActions": {
+      "edit": "Edit Task",
+      "delete": "Delete Task",
+      "noDescription": "No description",
+      "deleteTitle": "Delete Task",
+      "deleteConfirmation": "Are you sure you want to delete",
+      "confirmDelete": "Yes, Delete",
+      "deleting": "Deleting...",
+      "create": "Create Task",
+      "creating": "Creating..."
+    },
+    "alerts": {
+      "taskUpdated": "Task updated successfully.",
+      "taskDeleted": "Task deleted successfully.",
+      "taskDeleteError": "Failed to delete task. Please try again."
+    },
+    "teams": {
+      "title": "Project Teams",
+      "loading": "Loading teams...",
+      "error": "Failed to load teams",
+      "empty": "No teams found in this project",
+      "completed": "Completed",
+      "name": "Name",
+      "tasks": "Tasks",
+      "members": "Team Members",
+      "teamLeader": "Team Leader"
+    },
+    "files": {
+      "recentFiles": "Recent Files",
+      "allFiles": "All Files",
+      "uploadFile": "Upload File",
+      "uploading": "Uploading...",
+      "uploadSuccess": "File uploaded successfully",
+      "uploadError": "Failed to upload file",
+      "empty": "No files found",
+      "deleteSuccess": "File deleted successfully",
+      "deleteError": "Failed to delete file",
+      "deleteTitle": "Delete file?",
+      "deleteDescription": "Are you sure you want to delete this file? This action cannot be undone.",
+      "deleting": "Deleting...",
+      "confirmDelete": "Delete"
+    }
+  },
+  
+  "reports": {
+    "kpi": {
+      "taskCompletionRate": "Task Completion Rate",
+      "projectsCompletionRate": "Projects Completion Rate",
+      "teamsActivityRate": "Teams Activity Rate",
+      "fromLastMonth": "From last month"
+    },
+    "charts": {
+      "taskCompletionVsDeadline": "Task Completion Time vs Deadline",
+      "projectsProgress": "Projects Progress",
+      "workerActivityRate": "Worker Activity Rate",
+      "allProjects": "All Projects",
+      "periods": {
+        "monthly": "Monthly",
+        "weekly": "Weekly",
+        "yearly": "Yearly"
+      }
+    },
+    "form": {
+      "title": "Submit a detailed report",
+      "selectType": "Select Report Type",
+      "addNote": "Add Note",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "types": {
+        "projects": "Project Reports",
+        "tasks": "Task Reports & Productivity",
+        "teams": "Team Performance Reports",
+        "users": "Personal Productivity Report"
+      }
+    },
+    "validation": {
+      "reportTypeRequired": "Please select a report type",
+      "startDateRequired": "Start date is required",
+      "endDateRequired": "End date is required",
+      "endDateAfterStart": "End date must be after start date"
+    },
+    "alerts": {
+      "generateSuccess": "Detailed report generated successfully.",
+      "generateError": "Failed to generate detailed report."
+    }
+  },
+
   "common": {
-    "ok": "OK"
+    "ok": "OK",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit Task"
   },
   "emptyState": {
     "title": "No data found",

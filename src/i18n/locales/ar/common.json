@@ -121,8 +121,384 @@
       "logout": "تسجيل الخروج"
     }
   },
+  "tasks": {
+    "title": "مهامي",
+    "subtitle": "إدارة ومتابعة جميع مهامك في مكان واحد",
+    "createTask": "إنشاء مهمة",
+    "createTaskDescription": "أضف مهمة جديدة وأدخل تفاصيلها",
+    "creating": "جاري الإنشاء...",
+    "search": "ابحث عن المهام...",
+    "filter": "تصفية حسب الحالة",
+    "all": "كل المهام",
+    "Pending": "قيد الانتظار",
+    "In Progress": "قيد التنفيذ",
+    "In Review": "قيد المراجعة",
+    "Completed": "مكتملة",
+    "taskName": "اسم المهمة",
+    "description": "الوصف",
+    "priority": "الأولوية",
+    "status": "الحالة",
+    "assignee": "المسؤول عن المهمة",
+    "assigneeId": "رقم المسؤول",
+    "dueDate": "تاريخ التسليم",
+    "addTask": "إضافة مهمة",
+    "editTask": "تعديل المهمة",
+    "deleteTask": "حذف المهمة",
+    "unassigned": "غير معينة",
+    "noTasks": "لا توجد مهام",
+    "low": "منخفضة",
+    "medium": "متوسطة",
+    "high": "عالية",
+    "critical": "حرجة",
+    "deleteConfirmation": "هل أنت متأكد أنك تريد حذف \"{{name}}\"؟ لا يمكن التراجع عن هذا الإجراء."
+  },
+  "chats": {
+    "projectChats": "محادثات المشاريع",
+    "projectChat": "محادثة المشروع",
+    "search": "ابحث في المحادثات...",
+    "noChats": "لا توجد محادثات مشاريع بعد",
+    "selectChat": "اختر محادثة",
+    "back": "رجوع",
+    "writeMessage": "اكتب رسالة",
+    "send": "إرسال",
+    "attach": "إرفاق ملف",
+    "actions": "إجراءات الرسالة",
+    "reply": "رد",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "edited": "تم التعديل",
+    "replyingTo": "الرد على {{name}}",
+    "editingMessage": "تعديل الرسالة",
+    "noMessages": "لا توجد رسائل بعد. ابدأ المحادثة!",
+    "loadError": "تعذّر تحميل الرسائل.",
+    "deleteTitle": "حذف هذه الرسالة؟",
+    "deleteDescription": "لا يمكن التراجع عن هذا الإجراء.",
+    "alerts": {
+      "sendError": "تعذّر إرسال الرسالة. برجاء المحاولة مرة أخرى.",
+      "editError": "تعذّر تعديل الرسالة. برجاء المحاولة مرة أخرى.",
+      "deleteError": "تعذّر حذف الرسالة. برجاء المحاولة مرة أخرى.",
+      "messageDeleted": "تم حذف الرسالة."
+    }
+  },
+  "meetings": {
+    "add": "إضافة اجتماع",
+    "today": "اليوم",
+    "time": "الوقت",
+    "join": "انضمام",
+    "previousWeek": "الأسبوع السابق",
+    "nextWeek": "الأسبوع التالي",
+    "modal": {
+      "title": "إضافة اجتماع",
+      "description": "حدد موعد الاجتماع وادعُ فريقك.",
+      "project": "المشروع",
+      "selectProject": "اختر مشروعًا",
+      "name": "عنوان الاجتماع",
+      "namePlaceholder": "مثال: مراجعة التصميم",
+      "descriptionLabel": "الوصف",
+      "descriptionPlaceholder": "ما الذي ستناقشونه؟",
+      "date": "التاريخ",
+      "startTime": "وقت البداية",
+      "endTime": "وقت النهاية",
+      "link": "رابط الاجتماع",
+      "attendees": "الحضور",
+      "attendeesDescription": "اختر أعضاء المشروع الذين تريد دعوتهم.",
+      "selectProjectFirst": "اختر مشروعًا لعرض أعضائه.",
+      "noMembers": "لا يوجد أعضاء لهذا المشروع.",
+      "creating": "جارٍ الجدولة...",
+      "create": "جدولة الاجتماع"
+    },
+    "validation": {
+      "project": "من فضلك اختر مشروعًا",
+      "title": "العنوان يجب أن يكون 3 أحرف على الأقل",
+      "titleMax": "العنوان يجب ألا يتجاوز 120 حرفًا",
+      "descriptionMax": "الوصف يجب ألا يتجاوز 500 حرف",
+      "date": "من فضلك اختر التاريخ",
+      "startTime": "من فضلك اختر وقت البداية",
+      "endTime": "من فضلك اختر وقت النهاية",
+      "endBeforeStart": "وقت النهاية يجب أن يكون بعد وقت البداية",
+      "link": "أدخل رابطًا صحيحًا (https://...)"
+    },
+    "tabs": {
+      "aiSummary": "ملخص الذكاء الاصطناعي",
+      "notes": "الملاحظات"
+    },
+    "summary": {
+      "title": "ملخص مُولَّد بالذكاء الاصطناعي",
+      "keyPoints": "النقاط الرئيسية",
+      "actionItems": "المهام المطلوبة",
+      "empty": "لم يتم إنشاء ملخص لهذا الاجتماع بعد.",
+      "generate": "إنشاء الملخص",
+      "generating": "جارٍ الإنشاء...",
+      "createTasks": "إنشاء مهام",
+      "creatingTasks": "جارٍ الإنشاء...",
+      "noNotes": "لا توجد ملاحظات لهذا الاجتماع."
+    },
+    "video": {
+      "noRecording": "لا يوجد تسجيل لهذا الاجتماع.",
+      "joinMeeting": "الانضمام للاجتماع"
+    },
+    "transcripts": {
+      "title": "نص الاجتماع",
+      "search": "ابحث في النص",
+      "empty": "لا يوجد نص متاح.",
+      "noResults": "لا توجد نتائج."
+    },
+    "alerts": {
+      "created": "تمت جدولة الاجتماع بنجاح.",
+      "createError": "تعذّرت جدولة الاجتماع. برجاء المحاولة مرة أخرى.",
+      "summaryGenerated": "تم إنشاء الملخص بنجاح.",
+      "summaryError": "تعذّر إنشاء الملخص. برجاء المحاولة مرة أخرى.",
+      "tasksCreated": "تم إنشاء المهام من المهام المطلوبة.",
+      "tasksError": "تعذّر إنشاء المهام. برجاء المحاولة مرة أخرى."
+    }
+  },
+  "projects": {
+    "title": "المشاريع",
+    "allTitle": "كل المشاريع",
+    "search": "ابحث عن مشروع...",
+    "add": "إضافة مشروع",
+    "modal": {
+      "title": "إنشاء مشروع جديد",
+      "description": "أضف تفاصيل المشروع وحدد المواعيد والفرق المسؤولة.",
+      "basicInfo": "المعلومات الأساسية",
+      "basicInfoDescription": "أدخل اسم المشروع ووصفه.",
+      "projectName": "اسم المشروع",
+      "namePlaceholder": "مثال: إعادة تصميم الموقع",
+      "projectDescription": "الوصف",
+      "descriptionPlaceholder": "اكتب أهداف المشروع والنتائج المتوقعة.",
+      "timeline": "الجدول الزمني والتخطيط",
+      "timelineDescription": "حدد تواريخ المشروع وحالته الأولية.",
+      "startDate": "تاريخ البداية",
+      "deadline": "الموعد النهائي",
+      "status": "حالة المشروع",
+      "priority": "الأولوية",
+      "assignTeams": "تعيين الفرق",
+      "assignTeamsDescription": "اختر فريقًا واحدًا أو أكثر للعمل على المشروع.",
+      "members": "{{count}} أعضاء",
+      "requiredFields": "الحقول المطلوبة",
+      "creating": "جاري الإنشاء...",
+      "create": "إنشاء المشروع"
+    },
+    "validation": {
+      "nameMin": "اسم المشروع يجب أن يكون 3 أحرف على الأقل",
+      "nameMax": "اسم المشروع يجب ألا يتجاوز 80 حرفًا",
+      "descriptionMin": "الوصف يجب أن يكون 10 أحرف على الأقل",
+      "descriptionMax": "الوصف يجب ألا يتجاوز 500 حرف",
+      "startDate": "من فضلك اختاري تاريخ البداية",
+      "deadline": "من فضلك اختاري الموعد النهائي",
+      "teams": "من فضلك اختاري فريقًا واحدًا على الأقل",
+      "deadlineBeforeStart": "الموعد النهائي لا يمكن أن يكون قبل تاريخ البداية"
+    },
+    "filters": {
+      "all": "كل الحالات",
+      "active": "قيد التنفيذ",
+      "done": "مكتمل",
+      "onHold": "معلّق",
+      "newest": "الأحدث",
+      "oldest": "الأقدم",
+      "status": "الحالة",
+      "sort": "ترتيب حسب"
+    },
+    "columns": {
+      "name": "اسم المشروع",
+      "startDate": "تاريخ البداية",
+      "deadline": "موعد التسليم",
+      "status": "الحالة",
+      "files": "الملفات",
+      "team": "الفريق",
+      "priority": "الأولوية"
+    },
+    "status": {
+      "active": "قيد التنفيذ",
+      "done": "مكتمل",
+      "onHold": "معلّق",
+      "In Progress": "قيد التنفيذ",
+      "Pending": "قيد الانتظار",
+      "On Hold": "متوقف مؤقتًا",
+      "Completed": "مكتمل"
+    },
+    "priority": {
+      "high": "عالية",
+      "medium": "متوسطة",
+      "low": "منخفضة",
+      "Low": "منخفضة",
+      "Medium": "متوسطة",
+      "High": "عالية",
+      "Critical": "حرجة"
+    },
+    "files": "{{count}} ملف",
+    "empty": "لا توجد مشاريع حاليًا",
+    "loading": "جاري تحميل المشاريع...",
+    "error": "حدث خطأ أثناء تحميل المشاريع",
+    "completedPct": "{{value}}% مكتمل",
+    "pagination": {
+      "page": "صفحة {{page}} من {{total}}",
+      "prev": "السابق",
+      "next": "التالي"
+    },
+    "tabs": {
+      "overview": "نظرة عامة",
+      "tasks": "المهام",
+      "teams": "الفرق",
+      "files": "الملفات"
+    },
+    "dueDate": "تاريخ الاستحقاق",
+    "startDate": "تاريخ البداية",
+    "deadline": "الموعد النهائي",
+    "description": "الوصف",
+    "details": {
+      "title": "تفاصيل المشروع",
+      "type": "نوع المشروع",
+      "startDate": "تاريخ البداية",
+      "deadline": "الموعد النهائي",
+      "priority": "الأولوية",
+      "totalTasks": "إجمالي المهام"
+    },
+    "progress": {
+      "title": "تقدم المشروع",
+      "completed": "المشروع مكتمل",
+      "pending": "المهام المعلقة",
+      "inProgress": "المهام قيد التنفيذ",
+      "done": "المهام المكتملة"
+    },
+    "teamMembers": {
+      "title": "أعضاء الفريق",
+      "leader": "قائد الفريق"
+    },
+    "kanban": {
+      "todo": "قيد الانتظار",
+      "inProgress": "قيد التنفيذ",
+      "inReview": "قيد المراجعة",
+      "completed": "المهام المكتملة",
+      "addTask": "إضافة مهمة",
+      "progress": "التقدم",
+      "reviewer": "المراجع",
+      "noTasks": "لا توجد مهام حتى الآن"
+    },
+    "alerts": {
+      "createSuccess": "تم إنشاء المشروع بنجاح.",
+      "createError": "فشل إنشاء المشروع، برجاء المحاولة مرة أخرى."
+    },
+    "overview": {
+      "daysLeft": "متبقي {{value}} يوم",
+      "overdue": "متأخر",
+      "daysRemaining": "الأيام المتبقية",
+      "created": "تم إنشاؤها",
+      "noDescription": "لم تتم إضافة وصف بعد.",
+      "noMembers": "لم تتم إضافة أعضاء بعد.",
+      "roles": {
+        "Owner": "المالك",
+        "Member": "عضو",
+        "Leader": "قائد الفريق"
+      }
+    },
+    "taskForm": {
+      "title": "إنشاء مهمة جديدة",
+      "editTitle": "تعديل المهمة",
+      "description": "أضف مهمة إلى المشروع وحدد تفاصيلها.",
+      "projectId": "رقم المشروع",
+      "name": "اسم المهمة",
+      "namePlaceholder": "أدخل اسم المهمة",
+      "taskDescription": "الوصف",
+      "descriptionPlaceholder": "أدخل وصف المهمة",
+      "priority": "الأولوية",
+      "selectPriority": "اختر الأولوية",
+      "status": "الحالة",
+      "selectStatus": "اختر الحالة",
+      "dueDate": "تاريخ التسليم",
+      "creating": "جارٍ إنشاء المهمة...",
+      "create": "إنشاء المهمة",
+      "update": "حفظ التعديلات"
+    },
+    "taskActions": {
+      "edit": "تعديل المهمة",
+      "delete": "حذف المهمة",
+      "noDescription": "لا يوجد وصف",
+      "deleteTitle": "حذف المهمة",
+      "deleteConfirmation": "هل أنت متأكد أنك تريد حذف المهمة",
+      "confirmDelete": "نعم، احذف",
+      "deleting": "جاري الحذف..."
+    },
+    "alerts": {
+      "taskUpdated": "تم تعديل المهمة بنجاح.",
+      "taskDeleted": "تم حذف المهمة بنجاح.",
+      "taskDeleteError": "فشل حذف المهمة، برجاء المحاولة مرة أخرى."
+    },
+
+    "teams": {
+      "title": "فرق المشروع",
+      "loading": "جاري تحميل الفرق...",
+      "error": "حدث خطأ أثناء تحميل الفرق",
+      "empty": "لا توجد فرق في هذا المشروع",
+      "completed": "مكتمل",
+      "name": "الاسم",
+      "tasks": "المهام",
+      "members": "أعضاء الفريق",
+      "teamLeader": "قائد الفريق"
+    },
+    "files": {
+      "recentFiles": "الملفات الأخيرة",
+      "allFiles": "كل الملفات",
+      "uploadFile": "رفع ملف",
+      "uploading": "جاري رفع الملف...",
+      "uploadSuccess": "تم رفع الملف بنجاح",
+      "uploadError": "فشل رفع الملف",
+      "empty": "لا توجد ملفات",
+      "deleteSuccess": "تم حذف الملف بنجاح",
+      "deleteError": "فشل حذف الملف",
+      "deleteTitle": "حذف الملف؟",
+      "deleteDescription": "هل أنت متأكد من حذف هذا الملف؟ لا يمكن التراجع عن هذا الإجراء.",
+      "deleting": "جاري الحذف...",
+      "confirmDelete": "حذف"
+    }
+  },
+  "reports": {
+    "kpi": {
+      "taskCompletionRate": "معدل إنجاز المهام",
+      "projectsCompletionRate": "معدل إنجاز المشاريع",
+      "teamsActivityRate": "معدل نشاط الفرق",
+      "fromLastMonth": "مقارنة بالشهر الماضي"
+    },
+    "charts": {
+      "taskCompletionVsDeadline": "وقت إنجاز المهام مقابل الموعد النهائي",
+      "projectsProgress": "تقدم المشاريع",
+      "workerActivityRate": "معدل نشاط الموظفين",
+      "allProjects": "جميع المشاريع",
+      "periods": {
+        "monthly": "شهري",
+        "weekly": "أسبوعي",
+        "yearly": "سنوي"
+      }
+    },
+    "form": {
+      "title": "إرسال تقرير مفصل",
+      "selectType": "اختر نوع التقرير",
+      "addNote": "إضافة ملاحظة",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الانتهاء",
+      "types": {
+        "projects": "تقارير المشاريع",
+        "tasks": "تقارير المهام والإنتاجية",
+        "teams": "تقارير أداء الفرق",
+        "users": "تقرير الإنتاجية الشخصية"
+      }
+    },
+    "validation": {
+      "reportTypeRequired": "يرجى اختيار نوع التقرير",
+      "startDateRequired": "تاريخ البدء مطلوب",
+      "endDateRequired": "تاريخ الانتهاء مطلوب",
+      "endDateAfterStart": "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء"
+    },
+    "alerts": {
+      "generateSuccess": "تم إنشاء التقرير المفصل بنجاح.",
+      "generateError": "فشل في إنشاء التقرير المفصل."
+    }
+  },
   "common": {
-    "ok": "حسنًا"
+    "ok": "حسنًا",
+    "cancel": "ألغاء",
+    "delete": "حذف",
+    "edit": "تعديل المهمة"
   },
   "emptyState": {
     "title": "لا توجد بيانات",
