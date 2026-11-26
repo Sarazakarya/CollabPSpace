@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { isAxiosError } from "axios";
 import { TokenService } from "@/services/tokenService";
 import { RegisterSchema, type RegisterValues } from "../schema/RegisterSchema";
 import { useApiMutation } from "@/shared/hooks/useApiMutation";
+import type { ApiErrorResponse } from "@/shared/types/api-error-response";
 import type { RegisterPayload, RegisterResponse } from "../types/SignUptype";
 import { getSignUp } from "../api/getSignUp";
 import { useAlert } from "@/shared/hooks/useAlert";
@@ -31,6 +33,7 @@ const useSignUpForm = () => {
       password_confirmation: "",
     },
   });
+
   useEffect(() => {
     if (submitCount > 0) {
       trigger();
@@ -42,14 +45,21 @@ const useSignUpForm = () => {
     RegisterResponse
   >({
     mutationFn: (data) => getSignUp({ data }),
+
     options: {
       onSuccess: (response) => {
         TokenService.setToken(response.data.token, true);
+
         showAlert("success", response.message);
         navigate("/", { replace: true });
       },
-      onError: () => {
-        showAlert("error", t("auth.registerError"));
+
+      onError: (error) => {
+        const message = isAxiosError<ApiErrorResponse>(error)
+          ? (error.response?.data?.message ?? t("auth.registerError"))
+          : t("auth.registerError");
+
+        showAlert("error", message);
       },
     },
   });

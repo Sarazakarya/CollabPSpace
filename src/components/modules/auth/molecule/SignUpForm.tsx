@@ -60,9 +60,8 @@ export default function SignUpForm() {
         error={errors.password_confirmation?.message}
         {...register("password_confirmation")}
       />
-
       <Button type="submit" disabled={isPending} className="h-11 w-full">
-        {isPending ? t("auth.signingUp") : t("auth.submit")}
+        {isPending ? t("auth.creating") : t("auth.signUp")}
       </Button>
 
       <AuthSwitchLink

@@ -50,7 +50,8 @@
     },
     "ok": "OK",
     "loginSuccess": "Logged in successfully!",
-    "loginError": "Something went wrong!"
+    "loginError": "Something went wrong!",
+    "registerError": "Failed to create account. Please try again."
   },
   "welcome": "Welcome, {{name}}",
   "dashboard": {

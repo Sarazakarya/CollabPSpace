@@ -50,7 +50,8 @@
     },
     "ok": "حسنًا",
     "loginSuccess": "تم تسجيل الدخول بنجاح!",
-    "loginError": "حدث خطأ ما!"
+    "loginError": "حدث خطأ ما!",
+    "registerError": "حدث خطأ أثناء إنشاء الحساب، برجاء المحاولة مرة أخرى."
   },
   "welcome": "أهلاً، {{name}}",
   "dashboard": {
