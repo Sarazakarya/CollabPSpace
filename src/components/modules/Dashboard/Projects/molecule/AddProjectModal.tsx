@@ -1,12 +1,10 @@
 import { useTranslation } from "react-i18next";
 import type { UseFormReturn, SubmitHandler } from "react-hook-form";
-import { CalendarDays, Flag, Plus } from "lucide-react";
-
+import { CalendarDays, Flag } from "@/assets/icons/Icons";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -14,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 import { priorityModal, statusModal } from "../types/ProjesctModalType";
 import type { ProjectFormValues } from "../schema/ProjectModal";
 import TeamListSkeleton from "./TeamListSekelton";

@@ -11,6 +11,9 @@ import {
   FileText,
   Eye,
   EyeOff,
+  CalendarDays,
+  Flag,
+  Plus,
 } from "lucide-react";
 export {
   Mail,
@@ -25,4 +28,7 @@ export {
   FileText,
   Eye,
   EyeOff,
+  CalendarDays,
+  Flag,
+  Plus,
 };
