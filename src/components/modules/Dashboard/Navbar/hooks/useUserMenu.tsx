@@ -1,11 +1,31 @@
-import { LogOut, Pencil, User } from "lucide-react";
+import { LogOut, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { TokenService } from "@/services/tokenService";
-
-const user = { name: "Mohamed Salah", role: "UI/UX", initials: "MS" };
+import { useApiQuery } from "@/shared/hooks/useApiQuery";
+import { getProfileMe } from "@/components/modules/Dashboard/Profile/api/getProfileMe";
 
 export function useUserMenu() {
   const navigate = useNavigate();
+
+  const { data, isLoading } = useApiQuery({
+    queryKey: ["ProfileMe"],
+    queryFn: getProfileMe,
+  });
+
+  const profile = data?.data?.user;
+
+  const user = {
+    name: profile?.name || "User",
+    role: profile?.job_title || "",
+    avatar: profile?.avatar_url || null,
+    initials: (profile?.name || "U")
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((word: string) => word[0])
+      .join("")
+      .toUpperCase(),
+  };
 
   const logout = () => {
     TokenService.removeToken();
@@ -20,13 +40,12 @@ export function useUserMenu() {
       destructive: false,
     },
     {
-      key: "edit",
-      icon: Pencil,
-      onSelect: () => navigate("/profile/edit"),
-      destructive: false,
+      key: "logout",
+      icon: LogOut,
+      onSelect: logout,
+      destructive: true,
     },
-    { key: "logout", icon: LogOut, onSelect: logout, destructive: true },
   ] as const;
 
-  return { user, items };
+  return { user, items, isLoading };
 }

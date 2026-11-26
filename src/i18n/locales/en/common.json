@@ -454,7 +454,7 @@
       "confirmDelete": "Delete"
     }
   },
-  
+
   "reports": {
     "kpi": {
       "taskCompletionRate": "Task Completion Rate",
@@ -495,6 +495,68 @@
     "alerts": {
       "generateSuccess": "Detailed report generated successfully.",
       "generateError": "Failed to generate detailed report."
+    }
+  },
+  "profile": {
+    "header": {
+      "joined": "Joined {{date}}",
+      "completedTasks": "Completed Tasks",
+      "hoursWorked": "Hours Worked"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "tasks": "Tasks",
+      "files": "Files",
+      "settings": "Settings"
+    },
+    "overview": {
+      "about": "About",
+      "recentActivities": "Recent Activities",
+      "noActivities": "No recent activities found."
+    },
+    "tasks": {
+      "todo": "To do",
+      "done": "Done",
+      "name": "Name",
+      "tasks": "Tasks",
+      "empty": "No tasks available."
+    },
+    "files": {
+      "byAuthor": "By {{author}}",
+      "download": "Download file",
+      "empty": "No files uploaded yet."
+    },
+    "settings": {
+      "personalInfo": {
+        "title": "Personal Info",
+        "subtitle": "You can change your personal information settings here.",
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "status": "Account Status"
+      },
+      "experience": {
+        "title": "Experience",
+        "subtitle": "You can change Experience settings here.",
+        "jobTitle": "Job Title",
+        "yearsOfExperience": "Years of Experience",
+        "currentTeamProject": "Current Team / Project"
+      },
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "validation": {
+      "nameRequired": "Full name is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneInvalid": "Please enter a valid phone number",
+      "yearsMin": "Years of experience cannot be negative"
+    },
+    "alerts": {
+      "updateSuccess": "Profile updated successfully.",
+      "updateError": "Failed to update profile.",
+      "avatarSuccess": "Profile photo updated successfully.",
+      "avatarError": "Failed to update profile photo.",
+      "downloadError": "Failed to download file."
     }
   },
 

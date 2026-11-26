@@ -494,6 +494,68 @@
       "generateError": "فشل في إنشاء التقرير المفصل."
     }
   },
+  "profile": {
+    "header": {
+      "joined": "انضم في {{date}}",
+      "completedTasks": "المهام المكتملة",
+      "hoursWorked": "ساعات العمل"
+    },
+    "tabs": {
+      "overview": "نظرة عامة",
+      "tasks": "المهام",
+      "files": "الملفات",
+      "settings": "الإعدادات"
+    },
+    "overview": {
+      "about": "نبذة عني",
+      "recentActivities": "النشاطات الأخيرة",
+      "noActivities": "لا توجد نشاطات حديثة."
+    },
+    "tasks": {
+      "todo": "قيد التنفيذ",
+      "done": "مكتملة",
+      "name": "الاسم",
+      "tasks": "المهام",
+      "empty": "لا توجد مهام متاحة."
+    },
+    "files": {
+      "byAuthor": "بواسطة {{author}}",
+      "download": "تحميل الملف",
+      "empty": "لم يتم رفع أي ملفات بعد."
+    },
+    "settings": {
+      "personalInfo": {
+        "title": "المعلومات الشخصية",
+        "subtitle": "يمكنك تعديل إعدادات معلوماتك الشخصية من هنا.",
+        "fullName": "الاسم الكامل",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "status": "حالة الحساب"
+      },
+      "experience": {
+        "title": "الخبرة المهنية",
+        "subtitle": "يمكنك تعديل إعدادات الخبرة من هنا.",
+        "jobTitle": "المسمى الوظيفي",
+        "yearsOfExperience": "سنوات الخبرة",
+        "currentTeamProject": "الفريق / المشروع الحالي"
+      },
+      "save": "حفظ",
+      "saving": "جاري الحفظ..."
+    },
+    "validation": {
+      "nameRequired": "الاسم الكامل مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح",
+      "phoneInvalid": "يرجى إدخال رقم هاتف صحيح",
+      "yearsMin": "سنوات الخبرة لا يمكن أن تكون بالسالب"
+    },
+    "alerts": {
+      "updateSuccess": "تم تحديث الملف الشخصي بنجاح.",
+      "updateError": "فشل في تحديث الملف الشخصي.",
+      "avatarSuccess": "تم تحديث الصورة الشخصية بنجاح.",
+      "avatarError": "فشل في تحديث الصورة الشخصية.",
+      "downloadError": "فشل في تحميل الملف."
+    }
+  },
   "common": {
     "ok": "حسنًا",
     "cancel": "ألغاء",

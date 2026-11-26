@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface AvatarProps {
   initials: string;
   size?: number;
@@ -11,6 +13,8 @@ export default function Avatar({
   src,
   alt = "User avatar",
 }: AvatarProps) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <span
       className="ds-text-primary inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-(--color-bg-card) bg-blue-500/10 font-semibold"
@@ -20,8 +24,13 @@ export default function Avatar({
         fontSize: size * 0.38,
       }}
     >
-      {src ? (
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+      {src && !imageError ? (
+        <img
+          src={src}
+          alt={alt}
+          onError={() => setImageError(true)}
+          className="h-full w-full object-cover"
+        />
       ) : (
         initials
       )}

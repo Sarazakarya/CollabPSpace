@@ -1,11 +1,27 @@
 import { Button } from "@/components/ui/button";
+import { getGoogleRedirect } from "../api/getGooglrRedirect";
 
 export default function GoogleButton({ label }: { label: string }) {
+  const handleGoogleLogin = async () => {
+    try {
+      const response = await getGoogleRedirect();
+
+      const authorizationUrl = response.data?.authorization_url;
+
+      if (authorizationUrl) {
+        window.location.href = authorizationUrl;
+      }
+    } catch (error) {
+      console.error("Google login error:", error);
+    }
+  };
+
   return (
     <Button
       type="button"
       variant="outline"
-      className="h-11 w-full gap-2 ds-bg-card"
+      onClick={handleGoogleLogin}
+      className="ds-bg-card h-11 w-full gap-2"
     >
       <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
         <path
@@ -25,6 +41,7 @@ export default function GoogleButton({ label }: { label: string }) {
           d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.4 6.6l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"
         />
       </svg>
+
       {label}
     </Button>
   );

@@ -19,6 +19,7 @@ import Chats from "@/pages/Dashboard/chats/Chats";
 import ChatRoom from "@/components/modules/Dashboard/Chats/organsisms/ChatRoom";
 import MeetingDetailsPage from "@/components/modules/Dashboard/Meeting/organisms/MeetingDetailsPage";
 import Mattings from "@/pages/Dashboard/Meetings/Mattings";
+import Profile from "@/pages/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -80,7 +81,7 @@ export const router = createBrowserRouter([
           { path: "/meetings", element: <Mattings /> },
           { path: "/meetings/:id", element: <MeetingDetailsPage /> },
           { path: "/tasks", element: <Tasks /> },
-          { path: "/profile", element: <Tasks /> },
+          { path: "/profile", element: <Profile /> },
         ],
       },
     ],
