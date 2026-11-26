@@ -1,17 +1,12 @@
 import {
   forwardRef,
   useState,
-  type InputHTMLAttributes,
-  type ReactNode,
 } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff } from "@/assets/icons/Icons";
 import FormField from "./FormField";
+import type { PasswordFieldProps } from "../types/Logintype";
 
-interface PasswordFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: string;
-  startAdornment?: ReactNode;
-}
+
 
 const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
   ({ label = "Password", startAdornment, error, ...rest }, ref) => {

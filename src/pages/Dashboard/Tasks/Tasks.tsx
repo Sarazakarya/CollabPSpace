@@ -10,7 +10,7 @@ const Tasks = () => {
         keywords={["Dashboard", "Projects", "Tasks", "Teams", "Meeting"]}
         noIndex
       />
-      <TasksPage />;
+      <TasksPage />
     </>
   );
 };

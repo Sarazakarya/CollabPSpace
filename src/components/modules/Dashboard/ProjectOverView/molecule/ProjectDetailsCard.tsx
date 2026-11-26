@@ -8,12 +8,8 @@ import {
   Activity,
   Clock,
 } from "lucide-react";
-import type { ProjectOverview } from "../types/overviewtype";
+import type { ProjectOverViewProps } from "../types/overviewtype";
 import { formatDate } from "../data/FormData";
-
-interface Props {
-  project: ProjectOverview;
-}
 
 const DetailItem = ({
   icon,
@@ -39,7 +35,7 @@ const DetailItem = ({
   </div>
 );
 
-const ProjectDetailsCard = ({ project }: Props) => {
+const ProjectDetailsCard = ({ project }: ProjectOverViewProps) => {
   const { t, i18n } = useTranslation();
   const { start_date, deadline, days_remaining, is_overdue } =
     project.due_date_indicator;

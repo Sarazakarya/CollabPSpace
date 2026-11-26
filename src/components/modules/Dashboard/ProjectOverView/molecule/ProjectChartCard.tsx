@@ -8,14 +8,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type { ProjectChart } from "../types/overviewtype";
+import type { ProjectChartsProps } from "../types/overviewtype";
 import { getMonthLabel } from "../data/FormData";
 
-interface Props {
-  chart: ProjectChart;
-}
-
-const ProjectChartCard = ({ chart }: Props) => {
+const ProjectChartCard = ({ chart }: ProjectChartsProps) => {
   const { t, i18n } = useTranslation();
 
   const createdLabel = t("projects.overview.created");

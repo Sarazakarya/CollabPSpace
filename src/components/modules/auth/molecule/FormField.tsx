@@ -1,12 +1,7 @@
-import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
+import { forwardRef } from "react";
 import { Input } from "@/components/ui/input";
+import type { FormFieldProps } from "../types/Logintype";
 
-interface FormFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  error?: string;
-  startAdornment?: ReactNode;
-  endAdornment?: ReactNode;
-}
 
 const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
   (

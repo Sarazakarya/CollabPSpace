@@ -1,3 +1,5 @@
+import type { SubmitHandler, UseFormReturn } from "react-hook-form";
+
 export interface ProjectTasksResponse {
   success: boolean;
   message: string;
@@ -80,4 +82,24 @@ export interface TaskFormValues {
   team_id: number | null;
   assigned_to: number | null;
   due_date: string;
+}
+
+
+// Page
+export interface AddTaskProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  form: UseFormReturn<TaskFormValues>;
+  onSubmit: SubmitHandler<TaskFormValues>;
+  isPending: boolean;
+  projectId: number;
+  task: ProjectTask | null;
+}
+
+export interface DeleteTaskProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  task: ProjectTask | null;
+  onConfirm: () => void;
+  isPending: boolean;
 }

@@ -1,23 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ChevronRight } from "lucide-react";
+
 import type { HeaderProps } from "../types/overviewtype";
 import { formatDate } from "../data/FormData";
 import { tabs } from "../data/projectOverViewdata";
 
 const ProjectOverViewHeader = ({ project }: HeaderProps) => {
   const { t, i18n } = useTranslation();
+
   const { start_date, deadline, total_days, days_remaining, is_overdue } =
     project.due_date_indicator;
 
-  const elapsed = is_overdue
-    ? 100
-    : total_days > 0
-      ? Math.min(
-          100,
-          Math.max(0, ((total_days - days_remaining) / total_days) * 100),
-        )
-      : 0;
+  let elapsed = 0;
+
+  if (is_overdue) {
+    elapsed = 100;
+  } else if (total_days > 0) {
+    elapsed = ((total_days - days_remaining) / total_days) * 100;
+
+    if (elapsed > 100) elapsed = 100;
+    if (elapsed < 0) elapsed = 0;
+  }
 
   return (
     <div className="space-y-4">
@@ -25,7 +29,9 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
         <Link to="/projects" className="hover:text-foreground">
           {t("nav.projects")}
         </Link>
+
         <ChevronRight className="size-3 rtl:rotate-180" />
+
         <span className="ds-text-primary font-medium">{project.name}</span>
       </nav>
 
@@ -33,6 +39,7 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
         <div className="flex items-center gap-3">
           <div className="flex flex-wrap items-center gap-3">
             <h1 className="ds-title-lg ds-text-primary">{project.name}</h1>
+
             <span className="ds-badge ds-badge-success">
               {t("projects.completedPct", {
                 value: project.progress_percentage,
@@ -41,12 +48,12 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
           </div>
         </div>
 
-        {/* Due date card */}
         <div className="ds-card w-full max-w-xs space-y-2 p-4! sm:w-72">
           <div className="flex items-center justify-between">
             <p className="ds-text-sm ds-text-primary font-semibold">
               {t("projects.dueDate")}
             </p>
+
             <p
               className={`ds-text-xs font-medium ${
                 is_overdue ? "ds-text-danger" : "ds-text-secondary"
@@ -54,7 +61,9 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
             >
               {is_overdue
                 ? t("projects.overview.overdue")
-                : t("projects.overview.daysLeft", { value: days_remaining })}
+                : t("projects.overview.daysLeft", {
+                    value: days_remaining,
+                  })}
             </p>
           </div>
 
@@ -71,6 +80,7 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
             <span>
               {t("projects.startDate")}: {formatDate(start_date, i18n.language)}
             </span>
+
             <span>
               {t("projects.deadline")}: {formatDate(deadline, i18n.language)}
             </span>
@@ -84,13 +94,13 @@ const ProjectOverViewHeader = ({ project }: HeaderProps) => {
             key={tab.key}
             to={tab.to}
             end={"end" in tab ? tab.end : false}
-            className={({ isActive }) =>
-              `ds-text-base -mb-px border-b-2 pb-3 font-medium transition-colors ${
-                isActive
-                  ? "ds-text-brand border-(--color-brand)"
-                  : "ds-text-secondary border-transparent hover:text-foreground"
-              }`
-            }
+            className={({ isActive }) => {
+              if (isActive) {
+                return "ds-text-base ds-text-brand -mb-px border-b-2 border-(--color-brand) pb-3 font-medium transition-colors";
+              }
+
+              return "ds-text-base ds-text-secondary -mb-px border-b-2 border-transparent pb-3 font-medium transition-colors hover:text-foreground";
+            }}
           >
             {t(`projects.tabs.${tab.key}`)}
           </NavLink>

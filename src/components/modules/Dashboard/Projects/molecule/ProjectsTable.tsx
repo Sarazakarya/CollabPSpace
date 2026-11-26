@@ -23,67 +23,12 @@ import {
 } from "@/components/ui/table";
 
 import { cn } from "@/lib/utils";
-import type {
-  PaginationMeta,
-  Project,
-  ProjectStatus,
-} from "../types/Projecttypes";
+import type { TableProps } from "../types/Projecttypes";
 
-interface Props {
-  projects: Project[];
-  meta?: PaginationMeta;
-  isLoading?: boolean;
-  isError?: boolean;
-  onPageChange?: (page: number) => void;
-}
+import EmptyState from "@/core/ui-states/EmptyState";
 
-const columns = [
-  "name",
-  "startDate",
-  "deadline",
-  "status",
-  "files",
-  "team",
-  "priority",
-];
-
-const priorityStyle = {
-  high: "bg-red-500/10 text-red-600 dark:text-red-400",
-  medium: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-  low: "bg-green-500/10 text-green-600 dark:text-green-400",
-  critical: "bg-red-500/10 text-red-600 dark:text-red-400",
-} as const;
-
-const statusStyle: Record<ProjectStatus, string> = {
-  "In Progress": "bg-blue-500/10 text-blue-600 dark:text-blue-400",
-  Pending: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
-  "On Hold": "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-  Completed: "bg-green-500/10 text-green-600 dark:text-green-400",
-};
-
-function getNameLetters(name: string) {
-  return name.trim().slice(0, 2).toUpperCase().split("").join(" ");
-}
-
-function pageList(current: number, last: number): (number | "gap")[] {
-  if (last <= 5) {
-    return Array.from({ length: last }, (_, index) => index + 1);
-  }
-
-  const pages = new Set([1, last, current - 1, current + 1]);
-
-  const sortedPages = [...pages]
-    .filter((page) => page >= 1 && page <= last)
-    .sort((a, b) => a - b);
-
-  return sortedPages.flatMap((page, index) => {
-    if (index > 0 && page - sortedPages[index - 1] > 1) {
-      return ["gap" as const, page];
-    }
-
-    return [page];
-  });
-}
+import { columns, priorityStyle, statusStyle } from "../utils/Projectsdata";
+import { getNameLetters, pageList } from "../utils/ProjectsTable";
 
 export default function ProjectsTable({
   projects,
@@ -91,14 +36,14 @@ export default function ProjectsTable({
   isLoading = false,
   isError = false,
   onPageChange,
-}: Props) {
+}: TableProps) {
   const { t } = useTranslation();
 
-  const message = isError
-    ? t("projects.error")
-    : !isLoading && projects.length === 0
-      ? t("projects.empty")
-      : null;
+  const message = isError ? (
+    t("projects.error")
+  ) : !isLoading && projects.length === 0 ? (
+    <EmptyState message={t("projects.empty")} />
+  ) : null;
 
   function handlePageChange(page: number) {
     if (page < 1 || (meta && page > meta.last_page)) {
@@ -111,7 +56,7 @@ export default function ProjectsTable({
   return (
     <div className="flex flex-col gap-4">
       <Card className="overflow-hidden gap-0 py-0">
-        <Table className="min-w-[720px]">
+        <Table className="min-w-180">
           <TableHeader>
             <TableRow className="border border-border bg-muted/60 hover:bg-muted/60">
               {columns.map((column) => (

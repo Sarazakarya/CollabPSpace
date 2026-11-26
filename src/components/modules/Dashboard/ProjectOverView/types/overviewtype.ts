@@ -96,14 +96,11 @@ export interface ProjectChartItem {
   is_future: boolean;
 }
 
-
-
 // Pages
 
 export interface descriptionProps {
   description: string | null;
 }
-
 
 export interface HeaderProps {
   project: ProjectOverview;
@@ -116,4 +113,12 @@ export interface ProgressProps {
 
 export interface TeamMembersProps {
   members: ProjectMember[];
+}
+
+export interface ProjectChartsProps {
+  chart: ProjectChart;
+}
+
+export interface ProjectOverViewProps {
+  project: ProjectOverview;
 }

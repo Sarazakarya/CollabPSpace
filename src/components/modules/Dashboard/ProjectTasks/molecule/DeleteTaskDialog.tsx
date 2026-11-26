@@ -1,6 +1,4 @@
-
 import { useTranslation } from "react-i18next";
-
 import {
   Dialog,
   DialogContent,
@@ -9,16 +7,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-
-import type { ProjectTask } from "../types/TaskType";
-
-interface Props {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  task: ProjectTask | null;
-  onConfirm: () => void;
-  isPending: boolean;
-}
+import type { DeleteTaskProps } from "../types/TaskType";
 
 const DeleteTaskDialog = ({
   open,
@@ -26,22 +15,18 @@ const DeleteTaskDialog = ({
   task,
   onConfirm,
   isPending,
-}: Props) => {
+}: DeleteTaskProps) => {
   const { t } = useTranslation();
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>
-            {t("projects.taskActions.deleteTitle")}
-          </DialogTitle>
+          <DialogTitle>{t("projects.taskActions.deleteTitle")}</DialogTitle>
 
           <DialogDescription>
             {t("projects.taskActions.deleteConfirmation")}{" "}
-            <span className="font-semibold text-foreground">
-              {task?.name}
-            </span>
+            <span className="font-semibold text-foreground">{task?.name}</span>
           </DialogDescription>
         </DialogHeader>
 

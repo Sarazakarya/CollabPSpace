@@ -1,3 +1,5 @@
+import type { InputHTMLAttributes, ReactNode } from "react";
+
 export interface LoginPayload {
   email: string;
   password: string;
@@ -32,4 +34,31 @@ export interface LoginResponse {
     token: string;
     token_type: string;
   };
+}
+
+export interface GoogleRedirectResponse {
+  success: boolean;
+  message: string;
+  data: {
+    provider: string;
+    authorization_url: string;
+  };
+}
+
+export interface PasswordFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  error?: string;
+  startAdornment?: ReactNode;
+}
+export interface FormFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+  error?: string;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
+}
+
+export interface AuthSwitchProps {
+  text: string;
+  linkText: string;
+  to: string;
 }

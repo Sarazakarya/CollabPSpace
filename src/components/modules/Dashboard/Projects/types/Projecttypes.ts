@@ -128,3 +128,22 @@ export interface ProjectsResponse {
     };
   };
 }
+
+
+export interface TableProps {
+  projects: Project[];
+  meta?: PaginationMeta;
+  isLoading?: boolean;
+  isError?: boolean;
+  onPageChange?: (page: number) => void;
+}
+
+
+export interface ProjectToolBarProps {
+  search: string;
+  status: StatusFilter;
+  sort: SortOrder;
+  onSearchChange: (v: string) => void;
+  onStatusChange: (v: StatusFilter) => void;
+  onSortChange: (v: SortOrder) => void;
+}

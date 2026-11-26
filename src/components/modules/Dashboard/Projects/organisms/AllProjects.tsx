@@ -1,9 +1,7 @@
 import ProjectsTable from "../molecule/ProjectsTable";
 import ProjectsToolbar from "../molecule/ProjectsToolBar";
-
 import { useProjects } from "../hooks/useProjects";
 import useGetBySearch from "../hooks/useGetBySearch";
-
 import type { Project, ProjectApi } from "../types/Projecttypes";
 
 const PER_PAGE = 15;

@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next";
-import type { UseFormReturn, SubmitHandler } from "react-hook-form";
-
 import {
   Dialog,
   DialogContent,
@@ -20,17 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
-import type { ProjectTask, TaskFormValues } from "../types/TaskType";
-
-interface Props {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  form: UseFormReturn<TaskFormValues>;
-  onSubmit: SubmitHandler<TaskFormValues>;
-  isPending: boolean;
-  projectId: number;
-  task: ProjectTask | null;
-}
+import type { AddTaskProps, TaskFormValues } from "../types/TaskType";
 
 const AddTaskModal = ({
   open,
@@ -39,7 +27,7 @@ const AddTaskModal = ({
   onSubmit,
   isPending,
   projectId,
-}: Props) => {
+}: AddTaskProps) => {
   const { t } = useTranslation();
 
   const { register, handleSubmit, setValue, watch } = form;
