@@ -22,9 +22,9 @@ const useLogout = () => {
     options: {
       onSuccess: () => {
         TokenService.removeToken();
-  queryClient.clear();
-        showAlert("success", t("auth.logoutSuccess"));
+        queryClient.clear();
         navigate("/sign-in", { replace: true });
+        showAlert("success", t("auth.logoutSuccess"));
       },
 
       onError: (error) => {

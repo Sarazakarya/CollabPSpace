@@ -1,4 +1,6 @@
+import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Avatar from "../atoms/Avatar";
 import { useUserMenu } from "../hooks/useUserMenu";
-import { Button } from "@/components/ui/button";
 
 export default function UserMenu() {
   const { t } = useTranslation();
@@ -22,23 +23,21 @@ export default function UserMenu() {
             type="button"
             aria-label={t("dashboard.userMenu.open")}
             variant="ghost"
-            className="hidden md:flex gap-2"
+            className="hidden h-auto gap-2 md:flex"
           />
         }
       >
         <div className="text-end">
-          <p className="ds-text-xs ds-text-primary font-semibold">
-            {user.name}
-          </p>
+          <p className="ds-text-xs ds-text-primary font-semibold">{user.name}</p>
           <p className="ds-text-xs ds-text-secondary">{user.role}</p>
         </div>
 
-        <Avatar initials={user.initials} size={32} />
+        <Avatar initials={user.initials} src={user.avatar} size={32} />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-52">
         {items.map(({ key, icon: Icon, onSelect, destructive }) => (
-          <div key={key}>
+          <Fragment key={key}>
             {destructive && <DropdownMenuSeparator />}
 
             <DropdownMenuItem
@@ -49,7 +48,7 @@ export default function UserMenu() {
               <Icon className="size-4" />
               {t(`dashboard.userMenu.${key}`)}
             </DropdownMenuItem>
-          </div>
+          </Fragment>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>

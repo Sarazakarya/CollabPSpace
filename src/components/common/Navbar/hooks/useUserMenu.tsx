@@ -3,13 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { useApiQuery } from "@/shared/hooks/useApiQuery";
 import { getProfileMe } from "@/components/modules/Dashboard/Profile/api/getProfileMe";
 import useLogout from "@/components/modules/auth/hooks/useLogOut";
-
+import { TokenService } from "@/services/tokenService";
 
 export function useUserMenu() {
   const navigate = useNavigate();
   const { data, isLoading } = useApiQuery({
     queryKey: ["ProfileMe"],
     queryFn: getProfileMe,
+    options: {
+      enabled: TokenService.hasToken(),
+      retry: false,
+      staleTime: 5 * 60 * 1000,
+    },
   });
 
   const { onLogout } = useLogout();

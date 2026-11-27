@@ -13,8 +13,6 @@ import { useMarkNotificationAsRead } from "../hooks/useMark";
 import { useMarkAllNotificationsAsRead } from "../hooks/useMarkAllNotificationsAsRead";
 import { useDeleteNotification } from "../hooks/useDeleteNotification";
 
-
-
 export default function NotificationsDropdown() {
   const { t, i18n } = useTranslation();
   const { data, isLoading, isError } = useGetNotifications();
@@ -46,22 +44,24 @@ export default function NotificationsDropdown() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger >
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          aria-label={t("notifications.title")}
-          className="ds-text-secondary ds-hover relative size-8"
-        >
-          <Bell className="size-4" />
+      <DropdownMenuTrigger
+        render={
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={t("notifications.title")}
+            className="ds-text-secondary ds-hover relative size-8"
+          />
+        }
+      >
+        <Bell className="size-4" />
 
-          {unreadCount > 0 && (
-            <span className="absolute -right-1 -top-1 flex size-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-semibold text-white">
-              {unreadCount > 9 ? "9+" : unreadCount}
-            </span>
-          )}
-        </Button>
+        {unreadCount > 0 && (
+          <span className="absolute -inset-e-1 -top-1 flex size-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-semibold text-white">
+            {unreadCount > 9 ? "9+" : unreadCount}
+          </span>
+        )}
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
