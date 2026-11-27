@@ -582,7 +582,17 @@
       "downloadError": "Failed to download file."
     }
   },
-
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "loading": "Loading notifications...",
+    "error": "Could not load notifications.",
+    "emptyTitle": "No notifications yet",
+    "emptyMessage": "Your notifications will appear here.",
+    "delete": "Delete notification",
+    "deleteSuccess": "Notification deleted successfully.",
+    "deleteError": "Failed to delete notification."
+  },
   "common": {
     "ok": "OK",
     "cancel": "Cancel",

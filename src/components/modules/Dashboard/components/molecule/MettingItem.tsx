@@ -1,9 +1,7 @@
 import { CalendarDays } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
-import Avatar from "../../Navbar/atoms/Avatar";
+import Avatar from "../../../../common/Navbar/atoms/Avatar";
 import type { MeetingItemProps } from "../types/DashboardType";
-
-
 
 export default function MeetingItem({
   title,

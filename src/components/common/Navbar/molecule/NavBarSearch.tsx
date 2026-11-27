@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { Search, FolderKanban, Users, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useProjects } from "@/components/modules/Dashboard/Projects/hooks/useProjects";
-import { useGetTeamList } from "../../Projects/hooks/useGetTeamList";
-import { useDebounceSearch } from "../../Projects/hooks/useDebounceSearch";
+import { useGetTeamList } from "../../../modules/Dashboard/Projects/hooks/useGetTeamList";
+import { useDebounceSearch } from "../../../modules/Dashboard/Projects/hooks/useDebounceSearch";
 
 const NavBarSearch = () => {
   const { t } = useTranslation();

@@ -28,6 +28,8 @@ import {
   Check,
   Bot,
   Send,
+  CheckCheck,
+  Trash2,
 } from "lucide-react";
 export {
   Mail,
@@ -59,4 +61,6 @@ export {
   Check,
   Bot,
   Send,
+  CheckCheck,
+  Trash2,
 };
