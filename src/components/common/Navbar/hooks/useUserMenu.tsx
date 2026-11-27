@@ -1,18 +1,18 @@
 import { LogOut, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { TokenService } from "@/services/tokenService";
 import { useApiQuery } from "@/shared/hooks/useApiQuery";
 import { getProfileMe } from "@/components/modules/Dashboard/Profile/api/getProfileMe";
-import { useQueryClient } from "@tanstack/react-query";
+import useLogout from "@/components/modules/auth/hooks/useLogOut";
+
 
 export function useUserMenu() {
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
-
   const { data, isLoading } = useApiQuery({
     queryKey: ["ProfileMe"],
     queryFn: getProfileMe,
   });
+
+  const { onLogout } = useLogout();
 
   const profile = data?.data?.user;
 
@@ -29,13 +29,6 @@ export function useUserMenu() {
       .toUpperCase(),
   };
 
-  const logout = () => {
-    TokenService.removeToken();
-    queryClient.clear();
-
-    navigate("/sign-in", { replace: true });
-  };
-
   const items = [
     {
       key: "profile",
@@ -46,7 +39,7 @@ export function useUserMenu() {
     {
       key: "logout",
       icon: LogOut,
-      onSelect: logout,
+      onSelect: onLogout,
       destructive: true,
     },
   ] as const;

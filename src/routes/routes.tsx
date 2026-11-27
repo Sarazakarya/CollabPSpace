@@ -22,7 +22,10 @@ import {
   MeetingDetailsPage,
   Mattings,
   Profile,
+  ResetPassword,
+  ForgetPassword,
 } from "./routeimport";
+import VerifyOtp from "@/pages/auth/VerifyOtp";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +33,9 @@ export const router = createBrowserRouter([
     children: [
       { path: "/sign-in", element: <Login /> },
       { path: "/sign-up", element: <Register /> },
+      { path: "/forgot-password", element: <ForgetPassword /> },
+      { path: "/reset-password", element: <ResetPassword /> },
+      { path: "/verify-otp", element: <VerifyOtp /> },
     ],
   },
   {

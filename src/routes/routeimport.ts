@@ -20,3 +20,6 @@ export { default as ProjectFiles } from "@/components/modules/Dashboard/ProjectF
 export { default as ChatLayout } from "@/components/modules/Dashboard/Chats/template/ChatLayout";
 export { default as ChatRoom } from "@/components/modules/Dashboard/Chats/organsisms/ChatRoom";
 export { default as MeetingDetailsPage } from "@/components/modules/Dashboard/Meeting/organisms/MeetingDetailsPage";
+export { default as ResetPassword } from "@/pages/auth/ResetPassword";
+export { default as VerifyOtpPage } from "@/pages/auth/VerifyOtp";
+export { default as ForgetPassword } from "@/pages/auth/ForgetPassword";
