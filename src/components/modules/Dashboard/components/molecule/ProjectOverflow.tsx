@@ -8,9 +8,7 @@ import {
   YAxis,
 } from "recharts";
 import { useTranslation } from "react-i18next";
-
 import DashboardCard from "./DashboardCard";
-import EmptyState from "@/core/ui-states/EmptyState";
 import EmptyMessage from "./EmptyMessage";
 
 const tick = { fontSize: 11, fill: "var(--color-text-secondary)" };
