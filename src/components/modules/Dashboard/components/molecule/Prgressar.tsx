@@ -2,9 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 
-// shadcn Progress DOM: Root > Track > Indicator
-//  [&>*]   -> Track      (same color, 20% = lighter)
-//  [&>*>*] -> Indicator  (full color)
+
 const progressBar = cva(
   "rtl:-scale-x-100 [&>*]:h-1.5 [&>*]:bg-current/20 [&>*>*]:bg-current",
   {

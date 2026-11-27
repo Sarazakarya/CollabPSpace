@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-
 import {
   Dialog,
   DialogContent,
@@ -8,18 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
 import { Button } from "@/components/ui/button";
-
-import type { DeleteTaskItem } from "../types/Taskstype";
-
-interface Props {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  task: DeleteTaskItem | null;
-  onConfirm: () => void;
-  isPending: boolean;
-}
+import type { DeleteTaskProps } from "../types/Taskstype";
 
 const DeletTaskModal = ({
   open,
@@ -27,7 +16,7 @@ const DeletTaskModal = ({
   task,
   onConfirm,
   isPending,
-}: Props) => {
+}: DeleteTaskProps) => {
   const { t } = useTranslation();
 
   return (

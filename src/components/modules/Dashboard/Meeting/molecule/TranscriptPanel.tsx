@@ -2,13 +2,9 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
-import type { TranscriptEntry } from "../types/MeetingTypes";
+import type {  TranscriptProps } from "../types/MeetingTypes";
 
-interface Props {
-  transcript: TranscriptEntry[];
-}
-
-const TranscriptPanel = ({ transcript }: Props) => {
+const TranscriptPanel = ({ transcript }: TranscriptProps) => {
   const { t } = useTranslation();
   const [search, setSearch] = useState("");
 
@@ -23,7 +19,7 @@ const TranscriptPanel = ({ transcript }: Props) => {
       <h3 className="ds-title-md ds-text-primary">{t("meetings.transcripts.title")}</h3>
 
       <div className="relative">
-        <Search className="ds-text-secondary pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2" />
+        <Search className="ds-text-secondary pointer-events-none absolute inset-s-3 top-1/2 size-4 -translate-y-1/2" />
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -32,7 +28,7 @@ const TranscriptPanel = ({ transcript }: Props) => {
         />
       </div>
 
-      <div className="max-h-[36rem] space-y-4 overflow-y-auto">
+      <div className="max-h-144 space-y-4 overflow-y-auto">
         {transcript.length === 0 ? (
           <p className="ds-text-sm ds-text-disabled text-center">{t("meetings.transcripts.empty")}</p>
         ) : entries.length === 0 ? (

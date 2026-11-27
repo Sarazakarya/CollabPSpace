@@ -1,3 +1,5 @@
+import type { Tone } from "../../utils/DashboardData";
+
 export type DashboardResponse = {
   success: boolean;
   data: {
@@ -222,4 +224,75 @@ export type Task = {
 
 export type TaskProps = {
   data: Task[];
+};
+
+export type Meeting = {
+  id: number;
+  title: string;
+  date: string;
+  start_time: string;
+  end_time: string;
+  meeting_link: string;
+  project: {
+    id: number;
+    name: string;
+  };
+  creator: {
+    id: number;
+    name: string;
+  };
+  participants: {
+    id: number;
+    name: string;
+    avatar_url: string | null;
+  }[];
+};
+
+export type MattingsProps = {
+  data: Meeting[];
+};
+
+export interface MeetingItemProps {
+  title: string;
+  date: string | null;
+  time: string;
+  extra: number;
+  people: {
+    id: number;
+    name: string;
+    avatar_url: string | null;
+  }[];
+}
+
+export interface ProjectItemProps {
+  name: string;
+  done: number;
+  total: number;
+  tone: Tone;
+}
+
+
+export type TaskItemProps = {
+  title: string;
+  priority: "low" | "medium" | "high" | "critical";
+  due: string;
+};
+
+export interface TeamRowProps {
+  name: string;
+  membersCount: number;
+  projectsCount: number;
+}
+
+
+type Team = {
+  id: number;
+  name: string;
+  description: string;
+  members_count: number;
+  projects_count: number;
+};
+
+export type TeamTaskProps = {
+  data: Team[];
 };

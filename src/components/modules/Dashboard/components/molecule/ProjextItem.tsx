@@ -1,17 +1,15 @@
-import { Layers } from "lucide-react";
+import { Layers } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
-
-import { toneMap, type Tone } from "../../../utils/DashboardData";
+import { toneMap } from "../../utils/DashboardData";
 import ProgressBar from "./Prgressar";
+import type { ProjectItemProps } from "../types/DashboardType";
 
-interface Props {
-  name: string;
-  done: number;
-  total: number;
-  tone: Tone;
-}
-
-export default function ProjectItem({ name, done, total, tone }: Props) {
+export default function ProjectItem({
+  name,
+  done,
+  total,
+  tone,
+}: ProjectItemProps) {
   const { t } = useTranslation();
 
   return (

@@ -1,34 +1,28 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Briefcase, Calendar, CheckSquare, Clock, Pencil } from "lucide-react";
+import {
+  Briefcase,
+  Calendar,
+  CheckSquare,
+  Clock,
+  Pencil,
+  User,
+} from "@/assets/icons/Icons";
 import { Skeleton } from "@/components/ui/skeleton";
-
-import type { ProfileTab, UserProfile } from "../types/profile.types";
+import type { ProfileHeaderBannerProps } from "../types/profile.types";
 import { ProfileMetricCard } from "../molecules/ProfileMetricCard";
 import { formatJoinedDate, tabs } from "../utils/profileFormatters";
 
-interface ProfileHeaderBannerProps {
-  user?: UserProfile;
-  isLoading?: boolean;
-  activeTab: ProfileTab;
-  onTabChange: (tab: ProfileTab) => void;
-  onAvatarChange?: (file: File) => void;
-  isUploadingAvatar?: boolean;
-}
-
-const DEFAULT_AVATAR =
-  "https://ui-avatars.com/api/?name=Mohamed+Salah&background=0052FF&color=fff";
-
-export const ProfileHeaderBanner: React.FC<ProfileHeaderBannerProps> = ({
+export const ProfileHeaderBanner = ({
   user,
   isLoading = false,
   activeTab,
   onTabChange,
   onAvatarChange,
   isUploadingAvatar = false,
-}) => {
+}: ProfileHeaderBannerProps) => {
   const { t } = useTranslation();
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -40,8 +34,6 @@ export const ProfileHeaderBanner: React.FC<ProfileHeaderBannerProps> = ({
     e.target.value = "";
   };
 
-  const avatarUrl = user?.avatar_url || DEFAULT_AVATAR;
-
   return (
     <header className="space-y-6">
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
@@ -51,15 +43,17 @@ export const ProfileHeaderBanner: React.FC<ProfileHeaderBannerProps> = ({
               <Skeleton className="h-16 w-16 rounded-full" />
             ) : (
               <>
-                <img
-                  key={avatarUrl}
-                  src={avatarUrl}
-                  alt={user?.name || "User Avatar"}
-                  onError={(e) => {
-                    e.currentTarget.src = DEFAULT_AVATAR;
-                  }}
-                  className="h-16 w-16 rounded-full border border-gray-200 object-cover"
-                />
+                {user?.avatar_url ? (
+                  <img
+                    src={user.avatar_url}
+                    alt={user.name || "User Avatar"}
+                    className="h-16 w-16 rounded-full border border-gray-200 object-cover"
+                  />
+                ) : (
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-[#0052FF]">
+                    <User className="h-8 w-8" />
+                  </div>
+                )}
 
                 {activeTab === "settings" && (
                   <>

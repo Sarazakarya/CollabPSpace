@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
-import { toneMap, type Tone } from "../../../utils/DashboardData";
+import { toneMap, type Tone } from "../../utils/DashboardData";
 import ProgressBar from "./Prgressar";
 
 interface Props {

@@ -1,12 +1,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-import type { ProfileTaskItem } from "../types/profile.types";
+import type {  ProfileTaskProgressRowProps } from "../types/profile.types";
 import { getTaskProgressPercentage } from "../utils/profileFormatters";
-
-interface ProfileTaskProgressRowProps {
-  task: ProfileTaskItem;
-  variant: "todo" | "done";
-}
 
 export const ProfileTaskProgressRow: React.FC<ProfileTaskProgressRowProps> = ({
   task,

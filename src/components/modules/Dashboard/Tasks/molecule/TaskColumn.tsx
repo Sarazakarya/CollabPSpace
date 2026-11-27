@@ -1,7 +1,5 @@
-import { Plus } from "lucide-react";
-
+import { Plus } from "@/assets/icons/Icons";
 import { Button } from "@/components/ui/button";
-
 import type { TaskColumnProps } from "../types/Taskstype";
 import TaskCard from "./TaskCard";
 

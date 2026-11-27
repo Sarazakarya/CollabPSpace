@@ -1,15 +1,14 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import type { MeetingToolbarProps } from "../types/MeetingTypes";
 
-interface Props {
-  monthLabel: string;
-  onPrevious: () => void;
-  onNext: () => void;
-  onToday: () => void;
-}
-
-const MeetingsToolbar = ({ monthLabel, onPrevious, onNext, onToday }: Props) => {
+const MeetingsToolbar = ({
+  monthLabel,
+  onPrevious,
+  onNext,
+  onToday,
+}: MeetingToolbarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -24,9 +23,16 @@ const MeetingsToolbar = ({ monthLabel, onPrevious, onNext, onToday }: Props) => 
           <ChevronLeft className="size-4 rtl:rotate-180" />
         </Button>
 
-        <p className="ds-title-md ds-text-primary min-w-40 text-center">{monthLabel}</p>
+        <p className="ds-title-md ds-text-primary min-w-40 text-center">
+          {monthLabel}
+        </p>
 
-        <Button variant="outline" size="icon" aria-label={t("meetings.nextWeek")} onClick={onNext}>
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label={t("meetings.nextWeek")}
+          onClick={onNext}
+        >
           <ChevronRight className="size-4 rtl:rotate-180" />
         </Button>
       </div>

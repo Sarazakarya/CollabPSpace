@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ClipboardList, Loader, CheckCircle2 } from "lucide-react";
-
+import { ClipboardList, Loader, CheckCircle2 } from "@/assets/icons/Icons";
 import StatCard from "./StateCard";
 import RateCard from "./RateCard";
 import type { StatsRowProps } from "../types/DashboardType";

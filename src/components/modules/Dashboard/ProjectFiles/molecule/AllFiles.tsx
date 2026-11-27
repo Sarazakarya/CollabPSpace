@@ -1,18 +1,15 @@
 import { Plus } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import type { ProjectFile } from "../types/FileType";
+import type { AllFileProps } from "../types/FileType";
 import FileCard from "./FileCard";
 import EmptyState from "@/core/ui-states/EmptyState";
 import useUploadFile from "../hooks/useUploadFile";
 import useFileUpload from "../hooks/useFileUpload";
 
-interface Props {
-  files: ProjectFile[];
-  projectId: string;
-}
 
-const AllFiles = ({ files, projectId }: Props) => {
+
+const AllFiles = ({ files, projectId }: AllFileProps) => {
   const { t } = useTranslation();
 
   const { fileInputRef, handleOpenUpload } = useFileUpload();

@@ -1,13 +1,9 @@
 import { useTranslation } from "react-i18next";
 import Avatar from "../../Navbar/atoms/Avatar";
+import type { TeamRowProps } from "../types/DashboardType";
 
-interface Props {
-  name: string;
-  membersCount: number;
-  projectsCount: number;
-}
 
-export default function TeamRow({ name, membersCount, projectsCount }: Props) {
+export default function TeamRow({ name, membersCount, projectsCount }: TeamRowProps) {
   const { t } = useTranslation();
 
   const initials = name

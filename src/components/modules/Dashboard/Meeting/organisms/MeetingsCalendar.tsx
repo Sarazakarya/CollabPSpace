@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus } from "lucide-react";
+import { Plus } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 import ErrorState from "@/core/ui-states/ErrorState";
 import { Button } from "@/components/ui/button";

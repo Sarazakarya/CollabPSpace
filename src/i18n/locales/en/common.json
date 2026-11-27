@@ -109,17 +109,20 @@
       "title": "Upcoming meetings",
       "today": "Today"
     },
-    "askAI": {
-      "title": "Ask AI",
-      "empty": "Ask me anything...",
-      "placeholder": "Ask me anything...",
-      "send": "Send"
-    },
     "userMenu": {
       "open": "Open user menu",
       "profile": "Profile",
       "edit": "Edit profile",
       "logout": "Log out"
+    },
+    "askAI": {
+      "error": "Something went wrong. Please try again.",
+      "noAnswer": "No answer received.",
+      "thinking": "AI is thinking...",
+      "empty": "Ask AI anything about your workspace.",
+      "placeholder": "Ask a question...",
+      "send": "Send",
+      "title": "Ask AI"
     }
   },
   "chats": {

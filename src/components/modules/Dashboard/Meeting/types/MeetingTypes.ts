@@ -44,7 +44,7 @@ export interface MemberOption {
   name: string;
 }
 
-
+// Pages
 export interface AddMeetingProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -57,4 +57,25 @@ export interface AttendanceProps {
 
 export interface MeetingsProps {
   meeting: Meeting;
+}
+
+export interface MeetingToolbarProps {
+  monthLabel: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  onToday: () => void;
+}
+
+
+export interface MeetingSummaryProps {
+  meetingId: number;
+}
+
+export interface TranscriptProps {
+  transcript: TranscriptEntry[];
+}
+
+export interface WeekGridProps {
+  weekStart: Date;
+  meetings: Meeting[];
 }

@@ -1,18 +1,9 @@
-import { CalendarDays } from "lucide-react";
+import { CalendarDays } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 import Avatar from "../../Navbar/atoms/Avatar";
+import type { MeetingItemProps } from "../types/DashboardType";
 
-interface Props {
-  title: string;
-  date: string | null;
-  time: string;
-  extra: number;
-  people: {
-    id: number;
-    name: string;
-    avatar_url: string | null;
-  }[];
-}
+
 
 export default function MeetingItem({
   title,
@@ -20,7 +11,7 @@ export default function MeetingItem({
   time,
   extra,
   people,
-}: Props) {
+}: MeetingItemProps) {
   const { t } = useTranslation();
 
   return (

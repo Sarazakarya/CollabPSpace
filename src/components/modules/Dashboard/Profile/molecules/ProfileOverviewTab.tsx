@@ -1,41 +1,13 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { FileText } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { UserActivityItem, UserProfile } from "../types/profile.types";
+import type { ProfileOverviewTabProps } from "../types/profile.types";
+import { FALLBACK_ACTIVITIES } from "../utils/profileFormatters";
 
-interface ProfileOverviewTabProps {
-  user?: UserProfile;
-  isLoading?: boolean;
-}
-
-const FALLBACK_ACTIVITIES: UserActivityItem[] = [
-  {
-    id: 1,
-    description: "Completed task User Research Analysis",
-    time_ago: "1h ago",
-  },
-  {
-    id: 2,
-    description: "Updated Design System Updates",
-    time_ago: "4h ago",
-  },
-  {
-    id: 3,
-    description: "Joined meeting Sprint Planning Meeting",
-    time_ago: "1d ago",
-  },
-  {
-    id: 4,
-    description: "Commented on Dashboard Layout Design",
-    time_ago: "2d ago",
-  },
-];
-
-export const ProfileOverviewTab: React.FC<ProfileOverviewTabProps> = ({
+export const ProfileOverviewTab = ({
   user,
   isLoading = false,
-}) => {
+}: ProfileOverviewTabProps) => {
   const { t } = useTranslation();
 
   const activities =
@@ -45,11 +17,11 @@ export const ProfileOverviewTab: React.FC<ProfileOverviewTabProps> = ({
 
   return (
     <div className="space-y-8 pt-2">
-      {/* About Section */}
       <section className="max-w-3xl space-y-3">
         <h2 className="text-base font-semibold text-gray-900">
           {t("profile.overview.about")}
         </h2>
+
         {isLoading ? (
           <div className="space-y-2">
             <Skeleton className="h-4 w-full" />
@@ -71,8 +43,8 @@ export const ProfileOverviewTab: React.FC<ProfileOverviewTabProps> = ({
 
         {isLoading ? (
           <div className="space-y-3">
-            {Array.from({ length: 4 }).map((_, idx) => (
-              <div key={idx} className="flex items-center justify-between">
+            {Array.from({ length: 4 }, (_, index) => (
+              <div key={index} className="flex items-center justify-between">
                 <Skeleton className="h-4 w-72" />
                 <Skeleton className="h-3 w-12" />
               </div>
@@ -89,8 +61,10 @@ export const ProfileOverviewTab: React.FC<ProfileOverviewTabProps> = ({
                   <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-50 text-amber-500">
                     <FileText className="h-3.5 w-3.5" />
                   </span>
+
                   <span>{activity.description}</span>
                 </div>
+
                 <span className="text-xs text-gray-400">
                   {activity.time_ago}
                 </span>

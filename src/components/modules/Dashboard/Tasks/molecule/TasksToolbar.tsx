@@ -1,21 +1,15 @@
-import { Search } from "lucide-react";
+import { Search, Plus } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 import { Input } from "@/components/ui/input";
-import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-interface Props {
-  search: string;
-  onSearchChange: (value: string) => void;
-  onCreateTask: () => void;
-  isPending?: boolean;
-}
+import type { TasToolbarProps } from "../types/Taskstype";
 
 const TasksToolbar = ({
   search,
   onSearchChange,
   onCreateTask,
   isPending,
-}: Props) => {
+}: TasToolbarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -27,7 +21,6 @@ const TasksToolbar = ({
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={t("tasks.search")}
-
           className="h-9 ps-9 bg-gray-200"
         />
       </div>

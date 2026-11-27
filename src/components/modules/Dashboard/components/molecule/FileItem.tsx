@@ -1,7 +1,7 @@
-import {  FileText } from "@/assets/icons/Icons"
+import { FileText } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 
-import { toneMap, type Tone } from "../../../utils/DashboardData";
+import { toneMap, type Tone } from "../../utils/DashboardData";
 
 interface Props {
   name: string;

@@ -1,18 +1,9 @@
 import { useTranslation } from "react-i18next";
-const badge = {
-  high: "ds-badge-danger",
-  medium: "ds-badge-warning",
-  low: "ds-badge-success",
-  critical: "ds-badge-danger",
-};
+import type { TaskItemProps } from "../types/DashboardType";
+import { badge } from "../../utils/DashboardData";
 
-type Props = {
-  title: string;
-  priority: "low" | "medium" | "high" | "critical";
-  due: string;
-};
 
-export default function TaskItem({ title, priority, due }: Props) {
+export default function TaskItem({ title, priority, due }: TaskItemProps) {
   const { t } = useTranslation();
 
   return (

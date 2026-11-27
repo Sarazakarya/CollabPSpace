@@ -1,13 +1,9 @@
 import { Video } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import type { Meeting } from "../types/MeetingTypes";
+import type { MeetingsProps } from "../types/MeetingTypes";
 
-interface Props {
-  meeting: Meeting;
-}
-
-const MeetingVideo = ({ meeting }: Props) => {
+const MeetingVideo = ({ meeting }: MeetingsProps) => {
   const { t } = useTranslation();
   if (meeting.recording_url) {
     return (

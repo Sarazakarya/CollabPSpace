@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ResponsiveContainer,
   BarChart,
@@ -10,21 +9,23 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import type { TaskCompletionBarChartProps } from "../types/report.types";
 
-
-
-export const TaskCompletionBarChart: React.FC<TaskCompletionBarChartProps> = ({
+export const TaskCompletionBarChart = ({
   title,
   data,
   isLoading = false,
-}) => {
+}: TaskCompletionBarChartProps) => {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+    <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
       <h3 className="mb-6 text-base font-medium text-gray-800">{title}</h3>
+
       <div className="h-60 w-full">
         {isLoading ? (
           <div className="flex h-full items-end justify-between gap-3 px-4 pt-6 pb-2">
             {[75, 50, 35, 65, 60, 80].map((height, idx) => (
-              <div key={idx} className="flex flex-1 flex-col items-center gap-2">
+              <div
+                key={idx}
+                className="flex flex-1 flex-col items-center gap-2"
+              >
                 <Skeleton
                   className="w-4 rounded-t-md"
                   style={{ height: `${height}%` }}

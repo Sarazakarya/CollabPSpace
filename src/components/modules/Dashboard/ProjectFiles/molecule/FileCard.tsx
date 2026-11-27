@@ -1,17 +1,13 @@
 import { FileImage, FileText, Download, Trash2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import type { ProjectFile } from "../types/FileType";
+import type { FileCardItemProps } from "../types/FileType";
 import useDeleteFile from "../hooks/useDeletefile";
 import useDeleteFileDialog from "../hooks/useDeleteFileDialog";
 import useDownloadFile from "../hooks/useDownloadFile";
 import DeleteFileModal from "./DeleteFileModal";
 
-interface Props {
-  file: ProjectFile;
-}
-
-const FileCard = ({ file }: Props) => {
+const FileCard = ({ file }: FileCardItemProps) => {
   const { i18n } = useTranslation();
 
   const { handleDownload, isDownloading } = useDownloadFile();
@@ -40,7 +36,6 @@ const FileCard = ({ file }: Props) => {
 
     deleteMutation(selectedFile.id, {
       onSuccess: () => {
-     
         handleCloseDelete();
       },
     });

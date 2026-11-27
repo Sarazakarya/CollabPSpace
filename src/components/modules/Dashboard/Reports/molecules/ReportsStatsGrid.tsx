@@ -1,20 +1,8 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { StatKpiCard } from "../molecules/StatKpiCard";
+import type { ReportsStatsGridProps } from "../types/report.types";
 
-interface ReportsStatsGridProps {
-  taskCompletionRate?: number;
-  taskDelta?: number;
-  isTasksLoading?: boolean;
-  projectCompletionRate?: number;
-  projectDelta?: number;
-  isProjectsLoading?: boolean;
-  teamActivityRate?: number;
-  teamDelta?: number;
-  isTeamsLoading?: boolean;
-}
-
-export const ReportsStatsGrid: React.FC<ReportsStatsGridProps> = ({
+export const ReportsStatsGrid = ({
   taskCompletionRate = 70,
   taskDelta = 3,
   isTasksLoading = false,
@@ -24,7 +12,7 @@ export const ReportsStatsGrid: React.FC<ReportsStatsGridProps> = ({
   teamActivityRate = 67,
   teamDelta = -4,
   isTeamsLoading = false,
-}) => {
+}: ReportsStatsGridProps) => {
   const { t } = useTranslation();
 
   return (
@@ -35,15 +23,17 @@ export const ReportsStatsGrid: React.FC<ReportsStatsGridProps> = ({
         delta={taskDelta}
         isLoading={isTasksLoading}
       />
+
       <StatKpiCard
         title={t(
           "reports.kpi.projectsCompletionRate",
-          "Projects Completion Rate"
+          "Projects Completion Rate",
         )}
         percentage={projectCompletionRate}
         delta={projectDelta}
         isLoading={isProjectsLoading}
       />
+
       <StatKpiCard
         title={t("reports.kpi.teamsActivityRate", "Teams Activity Rate")}
         percentage={teamActivityRate}

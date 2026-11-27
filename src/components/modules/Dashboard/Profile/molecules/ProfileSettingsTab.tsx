@@ -1,23 +1,19 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
-import { Check, Mail, User } from "lucide-react";
-import type { UserProfile } from "../types/profile.types";
+import { Check, Mail, User } from "@/assets/icons/Icons";
+import type { ProfileSettingsTabProps } from "../types/profile.types";
 import { useUpdateProfileSettings } from "../hooks/useUpdateProfileSettings";
 
-interface ProfileSettingsTabProps {
-  user?: UserProfile;
-  onRefetch?: () => void;
-}
-
-export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
+export const ProfileSettingsTab = ({
   user,
   onRefetch,
-}) => {
+}: ProfileSettingsTabProps) => {
   const { t } = useTranslation();
+
   const { form, onSubmit, isPending } = useUpdateProfileSettings(
     user,
     onRefetch,
   );
+
   const {
     register,
     handleSubmit,
@@ -26,7 +22,6 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 pt-2">
-      {/* Personal Info Row */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <h3 className="text-base font-semibold text-gray-900">
@@ -43,6 +38,8 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
               <label className="mb-1.5 block text-xs font-medium text-gray-700">
                 {t("profile.settings.personalInfo.fullName")}
               </label>
+
+              {/* name */}
               <div className="relative">
                 <User className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
                 <input
@@ -52,6 +49,7 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
                   className="w-full rounded-full border border-gray-200 py-2.5 pl-10 pr-4 text-sm text-gray-800 focus:border-[#0052FF] focus:outline-none"
                 />
               </div>
+
               {errors.name && (
                 <p className="mt-1 text-xs text-rose-500">
                   {errors.name.message}
@@ -59,10 +57,12 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
               )}
             </div>
 
+            {/* email */}
             <div>
               <label className="mb-1.5 block text-xs font-medium text-gray-700">
                 {t("profile.settings.personalInfo.email")}
               </label>
+
               <div className="relative">
                 <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
                 <input
@@ -72,6 +72,7 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
                   className="w-full rounded-full border border-gray-200 py-2.5 pl-10 pr-4 text-sm text-gray-800 focus:border-[#0052FF] focus:outline-none"
                 />
               </div>
+
               {errors.email && (
                 <p className="mt-1 text-xs text-rose-500">
                   {errors.email.message}
@@ -106,7 +107,6 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
         </div>
       </div>
 
-      {/* Experience Row */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <h3 className="text-base font-semibold text-gray-900">
@@ -158,7 +158,6 @@ export const ProfileSettingsTab: React.FC<ProfileSettingsTabProps> = ({
         </div>
       </div>
 
-      {/* Save Action Button */}
       <div className="border-t border-gray-200 pt-6">
         <button
           type="submit"

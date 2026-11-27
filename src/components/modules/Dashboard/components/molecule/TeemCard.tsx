@@ -1,20 +1,11 @@
 import { useTranslation } from "react-i18next";
 import TeamRow from "./TeamRow";
 import DashboardCard from "./DashboardCard";
+import type { TeamTaskProps } from "../types/DashboardType";
 
-type Team = {
-  id: number;
-  name: string;
-  description: string;
-  members_count: number;
-  projects_count: number;
-};
 
-type Props = {
-  data: Team[];
-};
 
-export default function TeamsCard({ data }: Props) {
+export default function TeamsCard({ data }: TeamTaskProps) {
   const { t } = useTranslation();
 
   return (

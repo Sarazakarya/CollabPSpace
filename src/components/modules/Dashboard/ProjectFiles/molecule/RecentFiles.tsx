@@ -1,13 +1,9 @@
 import { useTranslation } from "react-i18next";
-import type { ProjectFile } from "../types/FileType";
+import type { RecentFileProps } from "../types/FileType";
 import FileCard from "./FileCard";
 import EmptyState from "@/core/ui-states/EmptyState";
 
-interface Props {
-  files: ProjectFile[];
-}
-
-const RecentFiles = ({ files }: Props) => {
+const RecentFiles = ({ files }: RecentFileProps) => {
   const { t } = useTranslation();
 
   const recentFiles = files.slice(0, 3);

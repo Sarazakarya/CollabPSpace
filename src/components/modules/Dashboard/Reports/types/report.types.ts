@@ -24,7 +24,6 @@ export const defaultReportFormValues: DetailedReportFormValues = {
   endDate: "",
 };
 
-// API Responses based on Postman Collection (11. Reports Module)
 export interface ProjectReportResponse {
   data: {
     completion_rate?: number;
@@ -104,4 +103,18 @@ export interface ReportsChartsSectionProps {
   projectsList?: { id: number; name: string }[];
   activityPeriod: string;
   onPeriodChange: (val: string) => void;
+}
+
+
+// pages
+export interface ReportsStatsGridProps {
+  taskCompletionRate?: number;
+  taskDelta?: number;
+  isTasksLoading?: boolean;
+  projectCompletionRate?: number;
+  projectDelta?: number;
+  isProjectsLoading?: boolean;
+  teamActivityRate?: number;
+  teamDelta?: number;
+  isTeamsLoading?: boolean;
 }

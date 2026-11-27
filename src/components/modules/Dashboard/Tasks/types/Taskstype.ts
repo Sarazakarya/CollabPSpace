@@ -131,3 +131,18 @@ export interface UpdateTaskProps {
   projectId: number;
   onSuccess: () => void;
 }
+
+// pages
+export interface DeleteTaskProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  task: DeleteTaskItem | null;
+  onConfirm: () => void;
+  isPending: boolean;
+}
+export interface TasToolbarProps {
+  search: string;
+  onSearchChange: (value: string) => void;
+  onCreateTask: () => void;
+  isPending?: boolean;
+}

@@ -90,3 +90,49 @@ export const defaultProfileSettingsValues: UpdateProfileFormValues = {
   years_of_experience: 0,
   current_team_project: "",
 };
+
+// Pages
+
+export interface ProfileFileCardProps {
+  file: ProfileFileItem;
+}
+
+export interface ProfileFilesTabProps {
+  files?: ProfileFileItem[];
+  isLoading?: boolean;
+}
+
+export interface ProfileHeaderBannerProps {
+  user?: UserProfile;
+  isLoading?: boolean;
+  activeTab: ProfileTab;
+  onTabChange: (tab: ProfileTab) => void;
+  onAvatarChange?: (file: File) => void;
+  isUploadingAvatar?: boolean;
+}
+
+export interface ProfileMetricCardProps {
+  title: string;
+  value: number | string;
+  icon: React.ReactNode;
+  iconBgClass: string;
+  isLoading?: boolean;
+}
+
+export interface ProfileOverviewTabProps {
+  user?: UserProfile;
+  isLoading?: boolean;
+}
+
+export interface ProfileSettingsTabProps {
+  user?: UserProfile;
+  onRefetch?: () => void;
+}
+export interface ProfileTaskProgressRowProps {
+  task: ProfileTaskItem;
+  variant: "todo" | "done";
+}
+export interface ProfileTasksTabProps {
+  tasks?: ProfileTaskItem[];
+  isLoading?: boolean;
+}

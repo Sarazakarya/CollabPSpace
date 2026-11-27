@@ -5,12 +5,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import useCreateSummaryTasks from "../hooks/useCreateSummaryTasks";
 import useGenerateSummary from "../hooks/useGenerateSummary";
 import useGetMeetingSummary from "../hooks/useGetMeetingSummary";
+import type { MeetingSummaryProps } from "../types/MeetingTypes";
 
-interface Props {
-  meetingId: number;
-}
 
-const MeetingSummary = ({ meetingId }: Props) => {
+const MeetingSummary = ({ meetingId }: MeetingSummaryProps) => {
   const { t } = useTranslation();
   const { data: summary, isLoading } = useGetMeetingSummary(meetingId);
   const generateMutation = useGenerateSummary(meetingId);

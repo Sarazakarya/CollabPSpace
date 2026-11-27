@@ -2,8 +2,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getInitials } from "../utils/meetingUtils";
 import type { AttendanceProps } from "../types/MeetingTypes";
 
-
-
 const AttendeesStack = ({ attendees, max = 3, className = "size-6" }: AttendanceProps) => {
   const visible = attendees.slice(0, max);
   const extra = attendees.length - visible.length;

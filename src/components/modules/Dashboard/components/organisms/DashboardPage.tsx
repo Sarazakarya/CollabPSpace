@@ -1,4 +1,4 @@
-
+import EmptyState from "@/core/ui-states/EmptyState";
 import { useGetDashboard } from "../hooks/useGetDashboard";
 import ActiveProjectsCard from "../molecule/ActiveProjectCard";
 import AskAICard from "../molecule/AskAiCard";
@@ -21,7 +21,8 @@ const DashboardPage = () => {
       </div>
     );
 
-  if (isError || !data) return <ErrorState />;
+  if (isError) return <ErrorState />;
+  if (!data) return <EmptyState />;
   return (
     <div className="flex flex-col gap-5 md:gap-8">
       <StatsRow data={data?.data.overview} />

@@ -1,11 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Download, FileText } from "lucide-react";
-import type { ProfileFileItem } from "../types/profile.types";
+import type { ProfileFileCardProps } from "../types/profile.types";
 import useDownloadFile from "../../ProjectFiles/hooks/useDownloadFile";
-
-interface ProfileFileCardProps {
-  file: ProfileFileItem;
-}
 
 export const ProfileFileCard: React.FC<ProfileFileCardProps> = ({ file }) => {
   const { t } = useTranslation();

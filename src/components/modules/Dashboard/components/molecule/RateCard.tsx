@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/assets/icons/Icons";
 import { useTranslation } from "react-i18next";
 
 export default function RateCard({

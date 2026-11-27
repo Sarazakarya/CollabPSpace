@@ -130,3 +130,13 @@ export const meetings = [
     people: ["SH", "MW", "KM"],
   },
 ];
+
+
+export const badge = {
+  high: "ds-badge-danger",
+  medium: "ds-badge-warning",
+  low: "ds-badge-success",
+  critical: "ds-badge-danger",
+};
+
+

@@ -10,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
 import type { TaskCardProps } from "../types/Taskstype";
 import { priorityStyles } from "../data/TasksData";
 

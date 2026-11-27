@@ -1,34 +1,9 @@
 import { useTranslation } from "react-i18next";
 import DashboardCard from "./DashboardCard";
 import MeetingItem from "./MettingItem";
+import type { MattingsProps } from "../types/DashboardType";
 
-type Meeting = {
-  id: number;
-  title: string;
-  date: string;
-  start_time: string;
-  end_time: string;
-  meeting_link: string;
-  project: {
-    id: number;
-    name: string;
-  };
-  creator: {
-    id: number;
-    name: string;
-  };
-  participants: {
-    id: number;
-    name: string;
-    avatar_url: string | null;
-  }[];
-};
-
-type Props = {
-  data: Meeting[];
-};
-
-export default function MeetingsCard({ data }: Props) {
+export default function MeetingsCard({ data }: MattingsProps) {
   const { t, i18n } = useTranslation();
 
   return (

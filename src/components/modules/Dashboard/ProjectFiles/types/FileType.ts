@@ -70,3 +70,21 @@ export interface FileCardProps {
   file: ProjectFile;
   onDelete: (fileId: number) => void;
 }
+
+// pages
+
+export interface AllFileProps {
+  files: ProjectFile[];
+  projectId: string;
+}
+export interface FileCardProps {
+  file: ProjectFile;
+}
+
+export interface FileCardItemProps {
+  file: ProjectFile;
+}
+
+export interface RecentFileProps {
+  files: ProjectFile[];
+}

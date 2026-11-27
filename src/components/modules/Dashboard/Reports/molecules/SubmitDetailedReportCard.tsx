@@ -1,11 +1,10 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSubmitReportForm } from "../hooks/useSubmitReportForm";
 
-
-export const SubmitDetailedReportCard: React.FC = () => {
+export const SubmitDetailedReportCard = () => {
   const { t } = useTranslation();
   const { form, onSubmit, isPending } = useSubmitReportForm();
+
   const {
     register,
     handleSubmit,
@@ -13,7 +12,7 @@ export const SubmitDetailedReportCard: React.FC = () => {
   } = form;
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
+    <div className="flex flex-col justify-between rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
       <h3 className="mb-5 text-base font-medium text-gray-800">
         {t("reports.form.title", "Submit a detailed report")}
       </h3>
@@ -40,6 +39,7 @@ export const SubmitDetailedReportCard: React.FC = () => {
               {t("reports.form.types.users", "Personal Productivity Report")}
             </option>
           </select>
+
           {errors.reportType && (
             <p className="mt-1 text-xs text-rose-500">
               {errors.reportType.message}
@@ -54,6 +54,7 @@ export const SubmitDetailedReportCard: React.FC = () => {
             placeholder={t("reports.form.addNote", "Add Note")}
             className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-700 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none"
           />
+
           {errors.note && (
             <p className="mt-1 text-xs text-rose-500">{errors.note.message}</p>
           )}
@@ -67,6 +68,7 @@ export const SubmitDetailedReportCard: React.FC = () => {
               aria-label="Start Date"
               className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-600 focus:border-blue-500 focus:outline-none"
             />
+
             {errors.startDate && (
               <p className="mt-1 text-xs text-rose-500">
                 {errors.startDate.message}
@@ -81,6 +83,7 @@ export const SubmitDetailedReportCard: React.FC = () => {
               aria-label="End Date"
               className="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-600 focus:border-blue-500 focus:outline-none"
             />
+
             {errors.endDate && (
               <p className="mt-1 text-xs text-rose-500">
                 {errors.endDate.message}
