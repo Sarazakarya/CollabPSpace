@@ -3,28 +3,39 @@ import TeamRow from "./TeamRow";
 import DashboardCard from "./DashboardCard";
 import type { TeamTaskProps } from "../types/DashboardType";
 
-
-
 export default function TeamsCard({ data }: TeamTaskProps) {
   const { t } = useTranslation();
 
   return (
     <DashboardCard title={t("dashboard.teams.title")} viewAll>
-      <div className="ds-text-xs ds-text-secondary flex justify-between">
-        <span>{t("dashboard.teams.name")}</span>
-        <span>{t("dashboard.teams.projects")}</span>
-      </div>
+      {data.length === 0 ? (
+        <div className="flex h-56 flex-col items-center justify-center gap-2 text-center">
+          <p className="ds-text-sm font-semibold">
+            {t("dashboard.teams.emptyTitle")}
+          </p>
+          <p className="ds-text-xs ds-text-secondary">
+            {t("dashboard.teams.empty")}
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className="ds-text-xs ds-text-secondary flex justify-between">
+            <span>{t("dashboard.teams.name")}</span>
+            <span>{t("dashboard.teams.projects")}</span>
+          </div>
 
-      <ul className="flex max-h-62.5 flex-col gap-3 overflow-y-auto overflow-x-hidden pr-2">
-        {data.map((team) => (
-          <TeamRow
-            key={team.id}
-            name={team.name}
-            membersCount={team.members_count}
-            projectsCount={team.projects_count}
-          />
-        ))}
-      </ul>
+          <ul className="flex max-h-62.5 flex-col gap-3 overflow-y-auto overflow-x-hidden pr-2">
+            {data.map((team) => (
+              <TeamRow
+                key={team.id}
+                name={team.name}
+                membersCount={team.members_count}
+                projectsCount={team.projects_count}
+              />
+            ))}
+          </ul>
+        </>
+      )}
     </DashboardCard>
   );
 }

@@ -8,7 +8,10 @@ import {
   YAxis,
 } from "recharts";
 import { useTranslation } from "react-i18next";
+
 import DashboardCard from "./DashboardCard";
+import EmptyState from "@/core/ui-states/EmptyState";
+import EmptyMessage from "./EmptyMessage";
 
 const tick = { fontSize: 11, fill: "var(--color-text-secondary)" };
 
@@ -35,6 +38,8 @@ export default function ProjectOverviewChart({
     label: t(`dashboard.months.${p.month}`),
   }));
 
+  const hasData = chartData.some((p) => p.projects > 0);
+
   return (
     <DashboardCard
       title={t("dashboard.overview.title")}
@@ -46,58 +51,65 @@ export default function ProjectOverviewChart({
         </div>
       }
     >
-      <div className="h-56 w-full" dir="ltr">
-        <ResponsiveContainer>
-          <AreaChart
-            data={chartData}
-            margin={{ top: 8, right: 8, left: -16, bottom: 0 }}
-          >
-            <defs>
-              <linearGradient id="overviewFill" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="0%"
-                  style={{
-                    stopColor: "var(--color-brand)",
-                    stopOpacity: 0.25,
-                  }}
-                />
-                <stop
-                  offset="100%"
-                  style={{
-                    stopColor: "var(--color-brand)",
-                    stopOpacity: 0,
-                  }}
-                />
-              </linearGradient>
-            </defs>
+      {hasData ? (
+        <div className="h-56 w-full" dir="ltr">
+          <ResponsiveContainer>
+            <AreaChart
+              data={chartData}
+              margin={{ top: 8, right: 8, left: -16, bottom: 0 }}
+            >
+              <defs>
+                <linearGradient id="overviewFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop
+                    offset="0%"
+                    style={{
+                      stopColor: "var(--color-brand)",
+                      stopOpacity: 0.25,
+                    }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{
+                      stopColor: "var(--color-brand)",
+                      stopOpacity: 0,
+                    }}
+                  />
+                </linearGradient>
+              </defs>
 
-            <CartesianGrid
-              vertical={false}
-              strokeDasharray="3 3"
-              stroke="var(--color-border)"
-            />
+              <CartesianGrid
+                vertical={false}
+                strokeDasharray="3 3"
+                stroke="var(--color-border)"
+              />
 
-            <XAxis
-              dataKey="label"
-              tick={tick}
-              axisLine={false}
-              tickLine={false}
-            />
+              <XAxis
+                dataKey="label"
+                tick={tick}
+                axisLine={false}
+                tickLine={false}
+              />
 
-            <YAxis tick={tick} axisLine={false} tickLine={false} />
+              <YAxis tick={tick} axisLine={false} tickLine={false} />
 
-            <Tooltip />
+              <Tooltip />
 
-            <Area
-              type="monotone"
-              dataKey="projects"
-              stroke="var(--color-brand)"
-              strokeWidth={2}
-              fill="url(#overviewFill)"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      </div>
+              <Area
+                type="monotone"
+                dataKey="projects"
+                stroke="var(--color-brand)"
+                strokeWidth={2}
+                fill="url(#overviewFill)"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      ) : (
+        <EmptyMessage
+          title={t("dashboard.overview.emptyTitle")}
+          message={t("dashboard.overview.emptyMessage")}
+        />
+      )}
     </DashboardCard>
   );
 }

@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import DashboardCard from "./DashboardCard";
 import MeetingItem from "./MettingItem";
 import type { MattingsProps } from "../types/DashboardType";
+import EmptyMessage from "./EmptyMessage";
 
 export default function MeetingsCard({ data }: MattingsProps) {
   const { t, i18n } = useTranslation();
@@ -9,11 +10,12 @@ export default function MeetingsCard({ data }: MattingsProps) {
   return (
     <DashboardCard title={t("dashboard.meetings.title")} viewAll>
       {data.length === 0 ? (
-        <p className="ds-text-xs ds-text-secondary py-6 text-center">
-          {t("dashboard.meetings.empty")}
-        </p>
+        <EmptyMessage
+          title={t("dashboard.meetings.emptyTitle")}
+          message={t("dashboard.meetings.empty")}
+        />
       ) : (
-        <ul className="flex max-h-[250px] flex-col gap-5 overflow-y-auto overflow-x-hidden pr-2">
+        <ul className="flex max-h-62.5 flex-col gap-5 overflow-y-auto overflow-x-hidden pr-2">
           {data.map((meeting) => {
             const people = meeting.participants.slice(0, 3);
             const extra = Math.max(meeting.participants.length - 3, 0);

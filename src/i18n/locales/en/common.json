@@ -63,34 +63,49 @@
       "inProgress": "In Progress",
       "completed": "Completed",
       "completionRate": "Completion Rate",
-      "fromLastMonth": "{{value}} from last month"
+      "fromLastMonth": "{{value}} from last month",
+      "empty": "No tasks available yet."
     },
     "overview": {
       "title": "Project overview",
       "allProjects": "All Projects",
-      "thisYear": "This Year"
+      "thisYear": "This Year",
+      "emptyTitle": "No projects yet",
+      "emptyMessage": "There is no project data to display."
     },
     "months": {
-      "jan": "Jan",
-      "feb": "Feb",
-      "mar": "Mar",
-      "apr": "Apr",
-      "may": "May",
-      "jun": "Jun"
+      "Jan": "January",
+      "Feb": "February",
+      "Mar": "March",
+      "Apr": "April",
+      "May": "May",
+      "Jun": "June",
+      "Jul": "July",
+      "Aug": "August",
+      "Sep": "September",
+      "Oct": "October",
+      "Nov": "November",
+      "Dec": "December"
     },
     "activeProjects": {
       "title": "Active Projects",
-      "tasks": "Tasks {{done}}/{{total}}"
+      "tasks": "Tasks {{done}}/{{total}}",
+      "emptyTitle": "No active projects yet",
+      "empty": "Your active projects will appear here."
     },
     "recentFiles": {
       "title": "Recent Files",
       "by": "By {{name}} • {{time}}",
-      "download": "Download"
+      "download": "Download",
+      "emptyTitle": "No files yet",
+      "emptyMessage": "Files uploaded to your workspace will appear here."
     },
     "tasks": {
       "title": "Tasks",
       "dueToday": "Due today",
-      "due": "Due {{date}}"
+      "due": "Due {{date}}",
+      "emptyTitle": "No tasks yet",
+      "empty": "Your tasks will appear here."
     },
     "priority": {
       "high": "High",
@@ -103,11 +118,15 @@
       "tasks": "Tasks",
       "leader": "Leader",
       "members": "Members",
-      "projects": "Projects"
+      "projects": "Projects",
+      "emptyTitle": "No teams yet",
+      "empty": "Your teams will appear here."
     },
     "meetings": {
       "title": "Upcoming meetings",
-      "today": "Today"
+      "today": "Today",
+      "emptyTitle": "No meetings yet",
+      "empty": "Your upcoming meetings will appear here."
     },
     "userMenu": {
       "open": "Open user menu",

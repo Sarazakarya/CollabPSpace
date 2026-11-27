@@ -52,6 +52,11 @@ export default function StatsRow({ data }: StatsRowProps) {
         value={data.tasks.completion_rate}
         trend={data.tasks.completed_percentage}
       />
+      {data.tasks.total === 0 && (
+        <p className="col-span-full ds-text-xs ds-text-secondary py-4 text-center">
+          {t("dashboard.stats.empty")}
+        </p>
+      )}
     </div>
   );
 }

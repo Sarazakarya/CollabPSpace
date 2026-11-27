@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { TokenService } from "@/services/tokenService";
 import { useApiQuery } from "@/shared/hooks/useApiQuery";
 import { getProfileMe } from "@/components/modules/Dashboard/Profile/api/getProfileMe";
+import { useQueryClient } from "@tanstack/react-query";
 
 export function useUserMenu() {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { data, isLoading } = useApiQuery({
     queryKey: ["ProfileMe"],
@@ -29,6 +31,8 @@ export function useUserMenu() {
 
   const logout = () => {
     TokenService.removeToken();
+    queryClient.clear();
+
     navigate("/sign-in", { replace: true });
   };
 

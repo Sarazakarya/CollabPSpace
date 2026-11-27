@@ -6,8 +6,6 @@ import FilterSelect from "./FilterSelect";
 import { statusOptions } from "../utils/Projectsdata";
 
 
-
-
 export default function ProjectsToolbar(p: ProjectToolBarProps) {
   const { t } = useTranslation();
 
