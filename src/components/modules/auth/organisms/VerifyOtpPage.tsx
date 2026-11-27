@@ -9,9 +9,8 @@ import {
   verifyResetOtpSchema,
   type VerifyResetOtpValues,
 } from "../schema/PasswordRecoverySchema";
-
 export default function VerifyOtpPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
